@@ -187,7 +187,7 @@
       <p style="color:#273249; font-weight: 600;"><strong>名称:</strong> ${goodsName}</p>
       <p style="color:#ff5722; font-weight: 600;"><strong>图案模板:</strong> ${data.paintSeed ? data.paintSeed : ''}</p>
       <p style="color:#273249;"><strong>磨损:</strong> ${data.wearFlot}</p>
-      <p style="color:#ff5722; font-weight: 600;"><strong>印花:</strong>
+      <p style="color:#273249; font-weight: 600;"><strong>印花:</strong>
         ${data.stickers.length > 0 ? data.stickers.map(sticker => `
             <img src="${sticker.stickerimg}" alt="${sticker.name}" style="width: 32px; height: 32px;">
         `).join('') : '<p style="color:#ff5722; font-weight: 600;">无</p>'}
