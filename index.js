@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSGO2.WIKI饰品捡漏大师 - 入档模板历史价格查询
 // @namespace    https://github.com/your-github-username/cs-assistant
-// @version      2.1.0.0
+// @version      3.0.0.0
 // @description  CSGO2.WIKI 饰品捡漏大师脚本超实用！能依据排行榜查询多档次饰品数据，快速掌握历史价格。帮你精准定位性价比饰品，不错过任何捡漏时机，在 CSGO2 饰品交易里轻松抢占先机。
 // @author       Jack Mr
 // @match        *://www.youpin898.com/*
@@ -9,9 +9,12 @@
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // @license      MIT
+// @run-at       document-start
+// @grant        GM_xmlhttpRequest
 // @downloadURL https://update.greasyfork.org/scripts/524378/CS%E5%8A%A9%E6%89%8B%20-%20%E7%A3%A8%E6%8D%9F%E4%B8%8E%E6%A8%A1%E6%9D%BF%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2.user.js
 // @updateURL https://update.greasyfork.org/scripts/524378/CS%E5%8A%A9%E6%89%8B%20-%20%E7%A3%A8%E6%8D%9F%E4%B8%8E%E6%A8%A1%E6%9D%BF%E4%BB%B7%E6%A0%BC%E6%9F%A5%E8%AF%A2.meta.js
 // ==/UserScript==
+
 (function () {
     'use strict';
     let dataList = []; // 截取接口数据
@@ -26,8 +29,6 @@
         urlFlag = 'buff';
     }
     console.log(urlFlag)
-  
-  
     const templatesCollectionT1 = {
         '爪子刀（★） | 多普勒p1': [1, 3, 4, 5, 7, 8, 9, 13, 14, 16, 20, 24, 27, 28, 31, 32, 42, 44, 45, 48, 49, 54, 58, 59, 60, 62, 66, 68, 71, 72, 75, 77, 88, 90, 96, 98, 102, 108, 110, 112, 113, 116, 121, 125, 126, 129, 134, 138, 142, 143, 146, 148, 149, 151, 152, 156, 160, 162, 164, 165, 166, 170, 171, 174, 177, 178, 182, 183, 184, 185, 188, 189, 190, 193, 194, 195, 196, 202, 203, 204, 206, 209, 213, 216, 217, 218, 220, 222, 230, 232, 233, 234, 235, 238, 241, 243, 246, 250, 252, 253, 254, 258, 259, 262, 266, 269, 274, 280, 281, 284, 287, 292, 296, 303, 304, 307, 309, 310, 311, 315, 321, 325, 328, 329, 332, 333, 334, 335, 337, 340, 344, 349, 351, 353, 354, 355, 356, 359, 364, 368, 369, 370, 372, 373, 374, 378, 384, 385, 387, 388, 393, 394, 397, 398, 400, 402, 404, 405, 406, 408, 409, 410, 411, 412, 413, 415, 419, 425, 432, 434, 436, 438, 441, 443, 444, 445, 448, 450, 451, 452, 454, 457, 459, 461, 463, 464, 471, 473, 477, 479, 480, 483, 485, 489, 492, 493, 496, 498, 499, 504, 506, 507, 515, 516, 522, 526, 529, 530, 531, 532, 535, 537, 539, 540, 541, 545, 546, 547, 552, 553, 555, 559, 560, 561, 569, 570, 574, 578, 579, 580, 582, 589, 590, 591, 593, 594, 598, 602, 605, 606, 607, 610, 611, 614, 616, 621, 624, 626, 627, 628, 630, 631, 632, 637, 642, 647, 649, 652, 653, 655, 656, 660, 663, 667, 670, 672, 673, 674, 678, 680, 683, 684, 685, 688, 689, 691, 693, 696, 699, 701, 702, 705, 706, 709, 710, 715, 716, 717, 723, 725, 727, 728, 730, 731, 732, 733, 736, 743, 744, 746, 750, 753, 756, 761, 764, 766, 767, 770, 773, 776, 777, 780, 783, 785, 787, 791, 792, 794, 795, 803, 805, 809, 810, 812, 817, 818, 820, 822, 826, 832, 839, 843, 844, 845, 846, 852, 853, 854, 858, 861, 865, 867, 868, 869, 873, 874, 876, 894, 899, 907, 908, 909, 918, 919, 922, 923, 929, 930, 931, 939, 941, 948, 949, 951, 958, 959, 962, 966, 969, 971, 972, 976, 977, 980, 982, 988, 989, 992, 994, 997, 998, 1000],
         '爪子刀（★） | 多普勒p2': [1, 3, 4, 7, 9, 13, 20, 24, 27, 28, 31, 42, 44, 45, 49, 54, 59, 60, 62, 66, 71, 72, 75, 77, 88, 90, 96, 98, 102, 110, 113, 116, 121, 125, 134, 138, 142, 143, 148, 151, 156, 160, 162, 164, 166, 170, 174, 177, 183, 184, 185, 189, 190, 193, 194, 195, 196, 203, 206, 209, 216, 217, 218, 220, 222, 232, 234, 235, 238, 246, 250, 253, 254, 258, 259, 262, 266, 269, 280, 284, 296, 303, 304, 307, 309, 310, 311, 315, 321, 325, 328, 329, 333, 334, 335, 349, 351, 353, 354, 355, 364, 368, 369, 370, 372, 373, 374, 384, 385, 387, 388, 394, 397, 398, 400, 402, 404, 408, 409, 410, 411, 413, 415, 419, 425, 432, 434, 436, 438, 441, 443, 445, 448, 450, 451, 459, 463, 464, 473, 477, 479, 480, 483, 485, 489, 492, 496, 498, 499, 504, 506, 507, 515, 526, 529, 530, 531, 532, 535, 537, 540, 545, 546, 547, 552, 553, 555, 559, 560, 561, 569, 570, 574, 579, 580, 582, 589, 590, 591, 593, 594, 598, 605, 606, 610, 611, 616, 624, 626, 627, 628, 630, 632, 642, 647, 655, 663, 667, 670, 672, 674, 678, 680, 684, 689, 691, 693, 699, 706, 709, 710, 715, 716, 717, 723, 725, 727, 730, 731, 733, 744, 746, 750, 753, 756, 764, 766, 767, 776, 783, 785, 791, 794, 805, 809, 810, 812, 817, 818, 820, 822, 839, 843, 844, 845, 846, 852, 853, 854, 858, 861, 865, 868, 869, 894, 899, 907, 909, 919, 929, 930, 931, 939, 941, 948, 951, 958, 962, 969, 972, 976, 977, 980, 989, 992, 997, 998],
@@ -71,32 +72,38 @@
     };
     const templatesCollectionT4 = {
     };
+
+    console.log('脚本已初始化');
+
     // 拦截 XMLHttpRequest 请求
     const originalXhrOpen = XMLHttpRequest.prototype.open;
-  
+
     // 重写 XMLHttpRequest 的 open 方法
     XMLHttpRequest.prototype.open = function (method, url) {
+        // queryOnSaleCommodityList 是uu获取在售列表的接口
         if (url.includes('queryOnSaleCommodityList')) {
             const originalOnreadystatechange = this.onreadystatechange;
-  
+            console.log("===triger!!")
             // 监听请求完成后的回调
             this.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     // 获取接口返回的数据
                     const res = JSON.parse(this.responseText);
-  
+
                     // 存储接口数据，假设接口返回的数据结构适合存储
                     if (res && res.Data) {
-  
+
                         res.Data.forEach(item => {
                             let obj = {
                                 wearValue: item.abrade.replace(/0+$/, '') || '', // 假设接口返回的数据有 wearValue 字段
                                 paintseed: item.paintSeed || '', // 假设接口返回的数据有 wearValue 字段
-                                template: item.dopplerName || '', // 假设接口返回的数据有 wearValue 字段
-                                targetName: item.commodityName || '', // 假设接口返回的数据有 wearValue 字段
+                                template: item.dopplerName || '', // 假设接口返回的数据有 wearValue 字段 多普勒P级
+                                targetName: item.commodityName || '', // 假设接口返回的数据有 wearValue 字段 物品全称
                             }
                             dataList.push(obj)
                         });
+
+                        console.log("dataList =====> " + JSON.stringify(dataList));
                     }
                 }
                 // 调用原始的 onreadystatechange 回调
@@ -105,171 +112,177 @@
                 }
             };
         }
-  
+
         // 调用原始的 open 方法
         originalXhrOpen.apply(this, arguments);
     };
-      function showPopup(dataList, goodsName, type) {
-          // 创建背景遮罩
-          const overlay = document.createElement('div');
-          overlay.style.position = 'fixed';
-          overlay.style.top = '0';
-          overlay.style.left = '0';
-          overlay.style.width = '100%';
-          overlay.style.height = '100%';
-          overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-          overlay.style.zIndex = '9998';
-          overlay.style.transition = 'opacity 0.3s ease-in-out';
-          overlay.style.opacity = 0;
-  
-          setTimeout(() => overlay.style.opacity = 1, 10); // 为遮罩添加渐变出现效果
-  
-          // 创建弹窗容器
-          const popup = document.createElement('div');
-          popup.style.position = 'fixed';
-          popup.style.left = '50%';
-          popup.style.top = '50%';
-          popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
-          popup.style.padding = '30px';
-          popup.style.backgroundColor = '#ffffff';
-          popup.style.borderRadius = '15px';
-          popup.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
-          popup.style.zIndex = '9999';
-          popup.style.maxWidth = '900px';
-          popup.style.width = '50%';
-          popup.style.fontFamily = 'Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif';
-          popup.style.border = 'none';
-          popup.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
-          popup.style.opacity = 0;
-          popup.className = 'aaaaapopup'; // 添加类名aaaaapopup
-  
-          setTimeout(() => {
-              popup.style.opacity = 1;
-              popup.style.transform = 'translate(-50%, -50%) scale(1)';
-          }, 10); // 为弹窗添加渐变出现和缩放效果
-  
-          // 创建内容容器并设置最大高度与隐藏滚动条
-          const contentContainer = document.createElement('div');
-          contentContainer.style.maxHeight = '600px';
-          contentContainer.style.overflow = 'auto'; // 启用滚动
-          contentContainer.style.padding = '20px';
-          contentContainer.style.fontSize = '16px';
-          contentContainer.style.lineHeight = '1.2';
-  
-          // 隐藏滚动条，但支持滚动
-          contentContainer.style.scrollbarWidth = 'none'; // Firefox
-          contentContainer.style.msOverflowStyle = 'none'; // IE 10+
-  
-          // 使用 Webkit 方式隐藏滚动条
-          contentContainer.style.webkitOverflowScrolling = 'touch'; // 平滑滚动效果
-          const style = document.createElement('style');
-          style.innerHTML = `
-    /* Webkit 浏览器 */
-    .hide-scrollbar::-webkit-scrollbar {
-        display: none;
+
+    // 按钮弹出窗口
+    function showPopup(dataList, goodsName, type) {
+        // 创建背景遮罩
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        overlay.style.zIndex = '9998';
+        overlay.style.transition = 'opacity 0.3s ease-in-out';
+        overlay.style.opacity = 0;
+
+        setTimeout(() => overlay.style.opacity = 1, 10); // 为遮罩添加渐变出现效果
+
+        // 创建弹窗容器
+        const popup = document.createElement('div');
+        popup.style.position = 'fixed';
+        popup.style.left = '50%';
+        popup.style.top = '50%';
+        popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
+        popup.style.padding = '30px';
+        popup.style.backgroundColor = '#ffffff';
+        popup.style.borderRadius = '15px';
+        popup.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+        popup.style.zIndex = '9999';
+        popup.style.maxWidth = '900px';
+        popup.style.width = '50%';
+        popup.style.fontFamily = 'Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif';
+        popup.style.border = 'none';
+        popup.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
+        popup.style.opacity = 0;
+        popup.className = 'aaaaapopup'; // 添加类名aaaaapopup
+
+        setTimeout(() => {
+            popup.style.opacity = 1;
+            popup.style.transform = 'translate(-50%, -50%) scale(1)';
+        }, 10); // 为弹窗添加渐变出现和缩放效果
+
+        // 创建内容容器并设置最大高度与隐藏滚动条
+        const contentContainer = document.createElement('div');
+        contentContainer.style.maxHeight = '600px';
+        contentContainer.style.overflow = 'auto'; // 启用滚动
+        contentContainer.style.padding = '20px';
+        contentContainer.style.fontSize = '16px';
+        contentContainer.style.lineHeight = '1.2';
+
+        // 隐藏滚动条，但支持滚动
+        contentContainer.style.scrollbarWidth = 'none'; // Firefox
+        contentContainer.style.msOverflowStyle = 'none'; // IE 10+
+
+        // 使用 Webkit 方式隐藏滚动条
+        contentContainer.style.webkitOverflowScrolling = 'touch'; // 平滑滚动效果
+        const style = document.createElement('style');
+        style.innerHTML = `
+  /* Webkit 浏览器 */
+  .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE 10+ */
+      scrollbar-width: none;  /* Firefox */
+  }
+`;
+        document.head.appendChild(style);
+        contentContainer.classList.add('hide-scrollbar'); // 添加样式类以隐藏滚动条
+
+        // 弹窗内容
+        let content = `<h3 style="text-align:center; color:#222; font-size: 24px; font-weight: 700; margin-bottom: 25px;">${type === '1' ? '磨损' : '模板'}价格查询</h3>`;
+
+        // 遍历数据列表并生成内容
+        dataList.forEach((data, index) => {
+            const isLastItem = index === dataList.length - 1;
+            content += `
+  <div style="${isLastItem ? '' : 'border-bottom: 1px solid #e5e5e5;'} padding: 20px 0;">
+      <p style="color:#273249; font-weight: 600;"><strong>名称:</strong> ${goodsName}</p>
+      <p style="color:#ff5722; font-weight: 600;"><strong>图案模板:</strong> ${data.paintSeed ? data.paintSeed : ''}</p>
+      <p style="color:#273249;"><strong>磨损:</strong> ${data.wearFlot}</p>
+      <p style="color:#273249; font-weight: 600;"><strong>印花:</strong>
+        ${data.stickers.length > 0 ? data.stickers.map(sticker => `
+            <img src="${sticker.stickerimg}" alt="${sticker.name}" style="width: 32px; height: 32px;">
+        `).join('') : '<p style="color:#ff5722; font-weight: 600;">无</p>'}
+      </p>
+      <p style="color:#ff5722; font-weight: 600;"><strong>成交价格:</strong> ¥${data.tradePrice}</p>
+      <p style="color:#273249;"><strong>成交时在售底价:</strong> ¥${data.minSellPrice}</p>
+      <p style="color:#273249;"><strong>成交时间:</strong> ${new Date(data.tradeTime * 1000).toLocaleString()}</p>
+  </div>
+`;
+        });
+
+        // 将内容添加到内容容器中
+        contentContainer.innerHTML = content;
+
+        // 创建关闭文本
+        const closeText = document.createElement('span');
+        closeText.innerText = '关闭';
+        closeText.style.position = 'absolute';
+        closeText.style.top = '15px';
+        closeText.style.right = '15px';
+        closeText.style.color = '#273249';
+        closeText.style.fontSize = '18px';
+        closeText.style.cursor = 'pointer';
+        closeText.style.fontWeight = '400';
+        closeText.style.transition = 'color 0.3s';
+
+        closeText.addEventListener('mouseenter', () => {
+            closeText.style.color = '#666';
+        });
+
+        closeText.addEventListener('mouseleave', () => {
+            closeText.style.color = '#273249';
+        });
+
+        closeText.addEventListener('click', () => {
+            popup.style.opacity = 0;
+            popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            overlay.style.opacity = 0;
+            setTimeout(() => {
+                document.body.removeChild(popup);
+                document.body.removeChild(overlay);
+            }, 300);
+        });
+
+        // 将关闭文本和内容容器添加到弹窗
+        popup.appendChild(contentContainer);
+        popup.appendChild(closeText);
+
+        // 添加到页面
+        document.body.appendChild(overlay);
+        document.body.appendChild(popup);
     }
-    .hide-scrollbar {
-        -ms-overflow-style: none;  /* IE 10+ */
-        scrollbar-width: none;  /* Firefox */
-    }
-  `;
-          document.head.appendChild(style);
-          contentContainer.classList.add('hide-scrollbar'); // 添加样式类以隐藏滚动条
-  
-          // 弹窗内容
-          let content = `<h3 style="text-align:center; color:#222; font-size: 24px; font-weight: 700; margin-bottom: 25px;">${type === '1' ? '磨损' : '模板'}价格查询</h3>`;
-  
-          // 遍历数据列表并生成内容
-          dataList.forEach((data, index) => {
-              const isLastItem = index === dataList.length - 1;
-              content += `
-    <div style="${isLastItem ? '' : 'border-bottom: 1px solid #e5e5e5;'} padding: 20px 0;">
-        <p style="color:#273249; font-weight: 600;"><strong>名称:</strong> ${goodsName}</p>
-        <p style="color:#ff5722; font-weight: 600;"><strong>图案模板:</strong> ${data.paintSeed ? data.paintSeed : ''}</p>
-        <p style="color:#273249;"><strong>磨损:</strong> ${data.wearFlot}</p>
-        <p style="color:#273249;"><strong>印花:</strong> ${data.stickers.length > 0 ? data.stickers.join(', ') : '无'}</p>
-        <p style="color:#ff5722; font-weight: 600;"><strong>成交价格:</strong> ¥${data.tradePrice}</p>
-        <p style="color:#273249;"><strong>成交时在售底价:</strong> ¥${data.minSellPrice}</p>
-        <p style="color:#273249;"><strong>成交时间:</strong> ${new Date(data.tradeTime * 1000).toLocaleString()}</p>
-    </div>
-  `;
-          });
-  
-          // 将内容添加到内容容器中
-          contentContainer.innerHTML = content;
-  
-          // 创建关闭文本
-          const closeText = document.createElement('span');
-          closeText.innerText = '关闭';
-          closeText.style.position = 'absolute';
-          closeText.style.top = '15px';
-          closeText.style.right = '15px';
-          closeText.style.color = '#273249';
-          closeText.style.fontSize = '18px';
-          closeText.style.cursor = 'pointer';
-          closeText.style.fontWeight = '400';
-          closeText.style.transition = 'color 0.3s';
-  
-          closeText.addEventListener('mouseenter', () => {
-              closeText.style.color = '#666';
-          });
-  
-          closeText.addEventListener('mouseleave', () => {
-              closeText.style.color = '#273249';
-          });
-  
-          closeText.addEventListener('click', () => {
-              popup.style.opacity = 0;
-              popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
-              overlay.style.opacity = 0;
-              setTimeout(() => {
-                  document.body.removeChild(popup);
-                  document.body.removeChild(overlay);
-              }, 300);
-          });
-  
-          // 将关闭文本和内容容器添加到弹窗
-          popup.appendChild(contentContainer);
-          popup.appendChild(closeText);
-  
-          // 添加到页面
-          document.body.appendChild(overlay);
-          document.body.appendChild(popup);
-      }
-  
-    // 发送请求的函数
+
+    // 发送查询请求的函数
     function sendRequest(wearValue, paintseed, template, type, targetName) {
         // 第一个接口的URL
         const firstApiUrl = 'https://sdt-api.ok-skins.com/user/skin/v2/skin-info?content=' + wearValue + '&timestamp=' + new Date().getTime();
-  
+
         // 请求第一个接口
         fetch(firstApiUrl, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-App-Version': '1.0.0',
-                'X-Currency': 'CNY',
-                'X-Device': '1',
-                'X-Device-Id': '6ff4f894-4c0a-49a4-935c-2303c4185ecb',
-                'Language': 'zh_CN',
-                'Origin': 'https://steamdt.com',
-                'Referer': 'https://steamdt.com/',
-            }
-        })
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-App-Version': '1.0.0',
+                    'X-Currency': 'CNY',
+                    'X-Device': '1',
+                    'X-Device-Id': '6ff4f894-4c0a-49a4-935c-2303c4185ecb',
+                    'Language': 'zh_CN',
+                    'Origin': 'https://steamdt.com',
+                    'Referer': 'https://steamdt.com/',
+                }
+            })
             .then(response => response.json()) // 解析第一个接口的响应
             .then(firstApiData => {
-  
+
                 // 遍历第一个接口返回的数组，寻找匹配的名称
-                const matchedItem = firstApiData?.data?.find(item => item.assetDetail?.classInfo?.name === targetName);
-  
+                const matchedItem = firstApiData ?.data ?.find(item => item.assetDetail ?.classInfo ?.name === targetName);
+
                 if (matchedItem) {
                     const itemId = matchedItem.assetDetail.classInfo.itemId; // 获取 itemId
                     const goodsName = matchedItem.assetDetail.classInfo.name; // 获取 goodsName
-  
+
                     // 第二个接口的URL
                     const secondApiUrl = 'https://sdt-api.ok-skins.com/item/trade/v1/list?timestamp=' + new Date().getTime();
-  
+
                     const headers = {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
@@ -281,7 +294,7 @@
                         'Origin': 'https://steamdt.com',
                         'Referer': 'https://steamdt.com/',
                     };
-  
+
                     const requestData = {
                         paintSeed: paintseed ? [paintseed] : [], // 传入 paintseed 数据
                         specialStyles: template ? [template] : [], // 传入 template 数据
@@ -295,13 +308,13 @@
                         paintIndex: [], // 根据需求调整
                         timestamp: new Date().getTime().toString(), // 使用当前时间戳
                     };
-  
+
                     // 使用 fetch 发送 POST 请求
                     fetch(secondApiUrl, {
-                        method: 'POST',
-                        headers: headers,
-                        body: JSON.stringify(requestData),
-                    })
+                            method: 'POST',
+                            headers: headers,
+                            body: JSON.stringify(requestData),
+                        })
                         .then(response => response.json())
                         .then(data => {
                             if (data && data.data.list.length > 0) {
@@ -317,346 +330,481 @@
             })
             .catch(error => {
                 console.error('第一个接口请求失败:', error);
-  
+
             });
     }
-  
-    // 为每个 tr 元素添加查看历史价格和按模板查询价格按钮
-    function addHistoryButtonToRows() {
-        if (urlFlag === 'yy') {
-            if (dataList.length <= 0) return;
-            const rows = document.querySelectorAll('tr.ant-table-row');
-  
-            rows.forEach((row) => {
-  
-                // 检查当前行是否包含磨损值
-                const wearValueDiv = row.querySelector('.wear-degree-num___AbgA1 span');
-                const wearText = wearValueDiv.textContent.trim();
-                const wearMatch = wearText.match(/磨损：\s*(\d+\.\d+)/);
-                let wearValue = ''; // 磨损值
-                if (wearMatch) {
-                    wearValue = wearMatch[1];
-                }
-  
-                // dataList的磨损值匹配wearValue
-                const matchedData = dataList.find(item => item.wearValue === wearValue);
-                if (matchedData) {
-                    // 获取doppler名称
-                    let template = matchedData.template || '';
-                    let paintseed = matchedData.paintseed || '';
-                    let targetName = matchedData.targetName || '';
-                    let topTemplate = '';
-  
-                    template = targetName.includes('多普勒') ? template.toLowerCase() || '' : '';
-                    topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
-  
-  
-                    // 添加查看历史价格按钮
-                    const historyButton = document.createElement('button');
-                    historyButton.innerText = '查看历史价格';
-                    historyButton.className = 'view-history-btn';
-                    historyButton.style.display = 'block';
-                    historyButton.style.cursor = 'pointer';
-                    historyButton.style.marginBottom = '6px';
-                    historyButton.style.padding = '8px 15px';
-                    historyButton.style.backgroundColor = '#F7971D';
-                    historyButton.style.border = 'none';
-                    historyButton.style.color = '#fff';
-                    historyButton.style.borderRadius = '4px';
-                    historyButton.style.fontSize = '14px';
-                    historyButton.style.transition = 'background-color 0.3s';
-                    historyButton.style.width = '130px';
-  
-                    // 悬浮效果
-                    historyButton.addEventListener('mouseenter', () => {
-                        historyButton.style.backgroundColor = '#D0801B';
-                    });
-                    historyButton.addEventListener('mouseleave', () => {
-                        historyButton.style.backgroundColor = '#F7971D';
-                    });
-  
-                    // 添加查看历史价格按钮点击事件
-                    historyButton.addEventListener('click', function () {
-                        const existingPopups = document.querySelectorAll('.aaaaapopup');
-                        existingPopups.forEach(popup => popup.remove());
-  
-                        // 调用请求函数
-                        sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
-                    });
-  
-  
-                    // 添加csgo2.wiki插件品牌
-                    const parentDiv = document.querySelector('.text-box___UkTz8');
-                    if (parentDiv) {
-                        // 在父元素内选择目标 <p> 元素
-                        const paragraph = parentDiv.querySelector('.title___TIj4n');
-                        if (paragraph) {
-                            let originalText = paragraph.textContent;
-                            // 检查是否已经包含 "csgo2.wiki"
-                            if (!originalText.includes("csgo2.wiki")) {
-                                let newText = originalText + "【csgo2.wiki饰品排行榜】";
-                                paragraph.textContent = newText;
-                                paragraph.style.backgroundColor = '#F7971D';
-                                paragraph.style.color = '#fff';
-                                paragraph.style.cursor = 'pointer';
-                                paragraph.addEventListener('click', function () {
-                                    // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
-                                    window.open('https://csgo2.wiki', '_blank');
-                                });
-                            }
-                        }
-                    }
-  
-                    // 添加按模板查询价格按钮
-                    const templateButton = document.createElement('button');
-                    templateButton.innerText = '按模板查询价格';
-                    templateButton.className = 'view-template-btn';
-                    templateButton.style.cursor = 'pointer';
-                    templateButton.style.padding = '8px 15px';
-                    templateButton.style.backgroundColor = '#F7971D';
-                    templateButton.style.border = 'none';
-                    templateButton.style.color = '#fff';
-                    templateButton.style.borderRadius = '4px';
-                    templateButton.style.fontSize = '14px';
-                    templateButton.style.transition = 'background-color 0.3s';
-                    templateButton.style.width = '130px';
-  
-                    // 悬浮效果
-                    templateButton.addEventListener('mouseenter', () => {
-                        templateButton.style.backgroundColor = '#D0801B';
-                    });
-                    templateButton.addEventListener('mouseleave', () => {
-                        templateButton.style.backgroundColor = '#F7971D';
-                    });
-  
-                    templateButton.addEventListener('click', function () {
-                        const existingPopups = document.querySelectorAll('.aaaaapopup');
-                        existingPopups.forEach(popup => popup.remove());
-  
-                        // 调用请求函数
-                        sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
-                    });
-                    // 创建显示T1/T2的div
-                    const templateLabel = document.createElement('div');
-                    templateLabel.style.marginTop = '5px';
-                    templateLabel.style.marginBottom = '5px';
-                    templateLabel.style.fontSize = '16px';
-                    templateLabel.style.fontWeight = '600';
-                    templateLabel.style.backgroundColor = '#fff';
-                    templateLabel.style.color = '#fff';
-                    templateLabel.style.fontStyle = 'italic';
-                    templateLabel.style.textAlign = 'center';
-                    templateLabel.style.borderRadius = '4px';
-                    templateLabel.style.cursor = 'pointer';
-                    templateLabel.addEventListener('click', function () {
-                        // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
-                        window.open('https://csgo2.wiki', '_blank');
-                    });
-                    // 根据模板和paintseed判断是否需要变更背景颜色
-                    if (templatesCollectionT1[topTemplate] && templatesCollectionT1[topTemplate].includes(Number(paintseed))) {
-                        row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
-                        templateLabel.style.backgroundColor = '#273249';
-                        templateLabel.style.color = '#fff';
-                        templateLabel.innerText = 'wiki榜单T1🥇'; // 显示T1
-                        templateLabel.style.padding = '6px';
-                    } else if (templatesCollectionT2[topTemplate] && templatesCollectionT2[topTemplate].includes(Number(paintseed))) {
-                        row.style.backgroundColor = '#FFF2E2'; // 满足条件则背景变为蓝色
-                        templateLabel.style.backgroundColor = '#454B58';
-                        templateLabel.style.color = '#fff';
-                        templateLabel.innerText = 'wiki榜单T2'; // 显示T2
-                        templateLabel.style.padding = '6px';
-                    } else if (templatesCollectionT3[topTemplate] && templatesCollectionT3[topTemplate].includes(Number(paintseed))) {
-                        templateLabel.style.backgroundColor = '#B3B3B3';
-                        templateLabel.innerText = 'wiki榜单T3'; // 显示T3
-                        templateLabel.style.padding = '6px';
-                    } else if (templatesCollectionT4[topTemplate] && templatesCollectionT4[topTemplate].includes(Number(paintseed))) {
-                        templateLabel.style.backgroundColor = '#DBDBDB';
-                        templateLabel.innerText = 'wiki榜单T4'; // 显示T4
-                        templateLabel.style.padding = '6px';
-                    } else {
-                        row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
-                    }
-  
-                    // 获取行内的一个 td 元素，假设是最后一个 td
-                    const lastTd = row.querySelector('td:last-child');
-                    if (lastTd) {
-                        lastTd.appendChild(templateLabel); // 添加显示T1/T2的div
-                        lastTd.appendChild(historyButton);
-                        lastTd.appendChild(templateButton);
-                    }
-  
-                    dataList = dataList.filter(item => item.wearValue !== wearValue);
-                }
-  
-            });
-        }
-  
-        if (urlFlag === 'buff') {
-            const rows = document.querySelectorAll('tr');
-  
-            rows.forEach(row => {
-                // 检查当前行是否包含磨损值
-                const wearValueDiv = row.querySelector('.wear-value');
-                if (wearValueDiv && !row.querySelector('.view-history-btn') && !row.querySelector('.view-template-btn')) {
-                    // 添加查看历史价格按钮
-                    const historyButton = document.createElement('button');
-                    historyButton.innerText = '饰品/历史价格';
-                    historyButton.className = 'view-history-btn';
-                    historyButton.style.display = 'block';
-                    historyButton.style.margin = '5px 10px 5px';
-                    historyButton.style.cursor = 'pointer';
-                    historyButton.style.padding = '8px 15px';
-                    historyButton.style.backgroundColor = '#F7971D';
-                    historyButton.style.border = 'none';
-                    historyButton.style.color = '#fff';
-                    historyButton.style.borderRadius = '4px';
-                    historyButton.style.fontSize = '14px';
-                    historyButton.style.transition = 'background-color 0.3s';
-  
-                    // 悬浮效果
-                    historyButton.addEventListener('mouseenter', () => {
-                        historyButton.style.backgroundColor = '#ECBB7E';
-                    });
-                    historyButton.addEventListener('mouseleave', () => {
-                        historyButton.style.backgroundColor = '#F7971D';
-                    });
-                    // 获取paintseed值
-                    const assetInfo = JSON.parse(row.getAttribute('data-asset-info'));
-                    const goodsInfo = JSON.parse(row.getAttribute('data-goods-info'));
-  
-                    let paintseed = '';
-                    let template = '';
-                    let targetName = '';
-                    let wearValue = null;
-                    let topTemplate = '';
-  
-                    // 获取磨损值
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+
+        const defaultPaintseedList = new Set([]);
+
+        const storedPaintseedList = localStorage.getItem('paintseedList');
+        let paintseedList = storedPaintseedList ? new Set(JSON.parse(storedPaintseedList)) : new Set(defaultPaintseedList);
+        let refreshIntervalId = null;
+
+        const panel = document.createElement('div');
+        panel.style.position = 'fixed';
+        panel.style.bottom = '20px';
+        panel.style.right = '90px';
+        panel.style.backgroundColor = 'rgba(38, 49, 71, 0.9)';
+        panel.style.backdropFilter = 'blur(5px)';   // 添加模糊效果
+        panel.style.borderRadius = '8px';
+        panel.style.color = '#fff';
+        panel.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+        panel.style.padding = '18px';
+        panel.style.zIndex = 10000;
+        panel.style.maxHeight = '400px';
+        panel.style.overflowY = 'auto';
+        panel.style.fontFamily = 'Arial, sans-serif';
+        panel.innerHTML = `
+            <a href="https://csgo2.wiki?from=jianloudashi-plugin" target="_blank">
+               <img style="width:50px" src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2fc8821e-eb40-4711-90a8-0e0d8e102d62%2Fd952780c-41d8-4840-b136-157392ce321b%2Fimage_5.png?table=collection&id=2e575e25-51de-4609-9f5e-7370aa9064b8&t=2e575e25-51de-4609-9f5e-7370aa9064b8&width=800&cache=v2" />
+            </a>
+            <a href="https://csgo2.wiki?from=jianloudashi-plugin" target="_blank" style="color:#fff"><strong>【特殊模板捡漏大师】自定义高亮面板</strong></a>
+            <br><br>
+            <strong>自定义模板历史记录:</strong>
+            <div id="paintseedList"></div>
+            <button id="clearPaintseeds" style="margin-top: 10px; background-color: #ff6b6b; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">清除历史记录</button>
+            <br><br>
+            <strong>自定义模板id:</strong>
+            <br>
+            <input type="text" id="paintseedInput" placeholder="输入 paintseed" style="width: 100%; margin-top: 10px; padding: 5px; border-radius: 5px; border: 1px solid #ccc; color: #000">
+            <button id="updatePaintseeds" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">更新目标模板</button>
+            <br><br>
+            <strong>自动操作:</strong>
+            <br>
+            <button id="toggleRefresh" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">每5S刷新一次直到遇到自定义模板</button>
+        `;
+        document.body.appendChild(panel);
+
+        const paintseedDisplay = document.getElementById('paintseedList');
+        const clearButton = document.getElementById('clearPaintseeds');
+        const updateButton = document.getElementById('updatePaintseeds');
+        const paintseedInput = document.getElementById('paintseedInput');
+        const toggleRefreshButton = document.getElementById('toggleRefresh');
+
+        let highlightedPaintseeds = new Set(JSON.parse(localStorage.getItem('highlightedPaintseeds') || '[]'));
+        updatePanel();
+
+        function processTRElements() {
+            let found = false;
+            if (urlFlag === 'yy') {
+                if (dataList.length <= 0) return found;
+                const rows = document.querySelectorAll('tr.ant-table-row');
+
+                rows.forEach((row) => {
+
+                    // 检查当前行是否包含磨损值
+                    const wearValueDiv = row.querySelector('.wear-degree-num___AbgA1 span');
                     const wearText = wearValueDiv.textContent.trim();
-                    const wearMatch = wearText.match(/磨损:\s*(\d+\.\d+)/);
+                    const wearMatch = wearText.match(/磨损：\s*(\d+\.\d+)/);
+                    let wearValue = ''; // 磨损值
                     if (wearMatch) {
                         wearValue = wearMatch[1];
                     }
-                    if (goodsInfo) {
-                        targetName = goodsInfo.name || '';
-                    }
-                    if (assetInfo) {
-                        paintseed = assetInfo?.info?.paintseed;
-                        template = targetName.includes('多普勒') ? assetInfo?.info?.metaphysic?.data?.name?.toLowerCase() || '' : '';
-                    }
-  
-                    topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
-  
-                    // 添加查看历史价格按钮点击事件
-                    historyButton.addEventListener('click', function () {
-                        const existingPopups = document.querySelectorAll('.aaaaapopup');
-                        existingPopups.forEach(popup => popup.remove());
-  
-                        // 调用请求函数
-                        sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
-                    });
-  
-                    // 添加按模板查询价格按钮
-                    const templateButton = document.createElement('button');
-                    templateButton.innerText = '模板/历史价格';
-                    templateButton.className = 'view-template-btn';
-                    templateButton.style.marginLeft = '10px';
-                    templateButton.style.marginBottom = '10px';
-                    templateButton.style.cursor = 'pointer';
-                    templateButton.style.padding = '8px 15px';
-                    templateButton.style.backgroundColor = '#F7971D';
-                    templateButton.style.border = 'none';
-                    templateButton.style.color = '#fff';
-                    templateButton.style.borderRadius = '4px';
-                    templateButton.style.fontSize = '14px';
-                    templateButton.style.transition = 'background-color 0.3s';
-  
-                    // 选择 h1 元素
-                    const h1Element = document.querySelector('.detail-cont h1');
-                    if (h1Element) {
-                        let originalText = h1Element.textContent;
-                        // 检查是否已经包含 "csgo2.wiki"
-                        if (!originalText.includes("csgo2.wiki")) {
-                            let newText = originalText + "【csgo2.wiki】";
-                            h1Element.textContent = newText;
-                            h1Element.style.backgroundColor = '#F7971D';
-                            h1Element.style.color = '#fff';
-                            h1Element.style.cursor = 'pointer';
-                            h1Element.style.maxWidth = '70%';
-                            h1Element.style.height = '30px';
-                            h1Element.addEventListener('click', function () {
-                                // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
-                                window.open('https://csgo2.wiki', '_blank');
-                            });
-                        }
-                    }
-  
-                    // 悬浮效果
-                    templateButton.addEventListener('mouseenter', () => {
-                        templateButton.style.backgroundColor = '#ECBB7E';
-                    });
-                    templateButton.addEventListener('mouseleave', () => {
+
+                    // dataList的磨损值匹配wearValue
+                    const matchedData = dataList.find(item => item.wearValue === wearValue);
+                    if (matchedData) {
+                        // 获取doppler名称
+                        let template = matchedData.template || '';
+                        let paintseed = matchedData.paintseed || '';
+                        let targetName = matchedData.targetName || '';
+                        let topTemplate = '';
+
+                        template = targetName.includes('多普勒') ? template.toLowerCase() || '' : '';
+                        topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
+
+
+                        // 添加查看历史价格按钮
+                        const historyButton = document.createElement('button');
+                        historyButton.innerText = '查看历史价格';
+                        historyButton.className = 'view-history-btn';
+                        historyButton.style.display = 'block';
+                        historyButton.style.cursor = 'pointer';
+                        historyButton.style.marginBottom = '6px';
+                        historyButton.style.padding = '8px 15px';
+                        historyButton.style.backgroundColor = '#F7971D';
+                        historyButton.style.border = 'none';
+                        historyButton.style.color = '#fff';
+                        historyButton.style.borderRadius = '4px';
+                        historyButton.style.fontSize = '14px';
+                        historyButton.style.transition = 'background-color 0.3s';
+                        historyButton.style.width = '130px';
+
+                        // 悬浮效果
+                        historyButton.addEventListener('mouseenter', () => {
+                            historyButton.style.backgroundColor = '#D0801B';
+                        });
+                        historyButton.addEventListener('mouseleave', () => {
+                            historyButton.style.backgroundColor = '#F7971D';
+                        });
+
+                        // 添加查看历史价格按钮点击事件
+                        historyButton.addEventListener('click', function () {
+                            const existingPopups = document.querySelectorAll('.aaaaapopup');
+                            existingPopups.forEach(popup => popup.remove());
+
+                            // 调用请求函数
+                            sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
+                        });
+
+                        // 添加按模板查询价格按钮
+                        const templateButton = document.createElement('button');
+                        templateButton.innerText = '按模板查询价格';
+                        templateButton.className = 'view-template-btn';
+                        templateButton.style.cursor = 'pointer';
+                        templateButton.style.padding = '8px 15px';
                         templateButton.style.backgroundColor = '#F7971D';
-                    });
-  
-                    templateButton.addEventListener('click', function () {
-                        const existingPopups = document.querySelectorAll('.aaaaapopup');
-                        existingPopups.forEach(popup => popup.remove());
-  
-                        // 调用请求函数
-                        sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
-                    });
-                    // 创建显示T1/T2的div
-                    const templateLabel = document.createElement('div');
-                    templateLabel.style.padding = '5px';
-                    templateLabel.style.marginTop = '5px';
-                    templateLabel.style.marginLeft = '10px';
-                    templateLabel.style.backgroundColor = '#fff';
-                    templateLabel.style.borderRadius = '4px';
-                    templateLabel.style.fontSize = '13px';
-                    templateLabel.style.fontWeight = '600';
-                    templateLabel.style.color = '#fff';
-                    templateLabel.style.fontStyle = 'italic';
-                    templateLabel.style.textAlign = 'center';
-                    templateLabel.style.width = '110px';
-                    templateLabel.style.cursor = 'pointer';
-                    templateLabel.addEventListener('click', function () {
-                        // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
-                        window.open('https://csgo2.wiki', '_blank');
-                    });
-                    // 根据模板和paintseed判断是否需要变更背景颜色
-                    if (templatesCollectionT1[topTemplate] && templatesCollectionT1[topTemplate].includes(Number(paintseed))) {
-                        row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
-                        templateLabel.style.backgroundColor = '#273249';
+                        templateButton.style.border = 'none';
+                        templateButton.style.color = '#fff';
+                        templateButton.style.borderRadius = '4px';
+                        templateButton.style.fontSize = '14px';
+                        templateButton.style.transition = 'background-color 0.3s';
+                        templateButton.style.width = '130px';
+
+                        // 悬浮效果
+                        templateButton.addEventListener('mouseenter', () => {
+                            templateButton.style.backgroundColor = '#D0801B';
+                        });
+                        templateButton.addEventListener('mouseleave', () => {
+                            templateButton.style.backgroundColor = '#F7971D';
+                        });
+
+                        templateButton.addEventListener('click', function () {
+                            const existingPopups = document.querySelectorAll('.aaaaapopup');
+                            existingPopups.forEach(popup => popup.remove());
+
+                            // 调用请求函数
+                            sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
+                        });
+                        // 创建显示T1/T2的div
+                        const templateLabel = document.createElement('div');
+                        templateLabel.style.marginTop = '5px';
+                        templateLabel.style.marginBottom = '5px';
+                        templateLabel.style.fontSize = '16px';
+                        templateLabel.style.fontWeight = '600';
+                        templateLabel.style.backgroundColor = '#fff';
                         templateLabel.style.color = '#fff';
-                        templateLabel.innerText = 'wiki榜单T1🥇'; // 显示T1
-                    } else if (templatesCollectionT2[topTemplate] && templatesCollectionT2[topTemplate].includes(Number(paintseed))) {
-                        row.style.backgroundColor = '#FFF2E2'; // 满足条件则背景变为蓝色
-                        templateLabel.style.backgroundColor = '#454B58';
-                        templateLabel.innerText = 'wiki榜单T2'; // 显示T2
-                        templateLabel.style.padding = '6px';
-                        templateLabel.style.color = '#fff';
-                    } else if (templatesCollectionT3[topTemplate] && templatesCollectionT3[topTemplate].includes(Number(paintseed))) {
-                        templateLabel.style.backgroundColor = '#B3B3B3';
-                        // row.style.backgroundColor = 'lightgreen'; // 满足条件则背景变为绿色
-                        templateLabel.innerText = 'wiki榜单T3'; // 显示T3
-                        templateLabel.style.padding = '6px';
-                    } else if (templatesCollectionT4[topTemplate] && templatesCollectionT4[topTemplate].includes(Number(paintseed))) {
-                        templateLabel.style.backgroundColor = '#DBDBDB';
-                        templateLabel.innerText = 'wiki榜单T4'; // 显示T4
-                        templateLabel.style.padding = '6px';
-                    } else {
-                        row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
+                        templateLabel.style.fontStyle = 'italic';
+                        templateLabel.style.textAlign = 'center';
+                        templateLabel.style.borderRadius = '4px';
+                        templateLabel.style.cursor = 'pointer';
+                        templateLabel.addEventListener('click', function () {
+                            // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
+                            window.open('https://csgo2.wiki', '_blank');
+                        });
+                        // 根据模板和paintseed判断是否需要变更背景颜色
+                        if (templatesCollectionT1[topTemplate] && templatesCollectionT1[topTemplate].includes(Number(paintseed))) {
+                            row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
+                            templateLabel.style.backgroundColor = '#273249';
+                            templateLabel.style.color = '#fff';
+                            templateLabel.innerText = 'wiki榜单T1🥇'; // 显示T1
+                            templateLabel.style.padding = '6px';
+                        } else if (templatesCollectionT2[topTemplate] && templatesCollectionT2[topTemplate].includes(Number(paintseed))) {
+                            row.style.backgroundColor = '#FFF2E2'; // 满足条件则背景变为蓝色
+                            templateLabel.style.backgroundColor = '#454B58';
+                            templateLabel.style.color = '#fff';
+                            templateLabel.innerText = 'wiki榜单T2'; // 显示T2
+                            templateLabel.style.padding = '6px';
+                        } else if (templatesCollectionT3[topTemplate] && templatesCollectionT3[topTemplate].includes(Number(paintseed))) {
+                            templateLabel.style.backgroundColor = '#B3B3B3';
+                            templateLabel.innerText = 'wiki榜单T3'; // 显示T3
+                            templateLabel.style.padding = '6px';
+                        } else if (templatesCollectionT4[topTemplate] && templatesCollectionT4[topTemplate].includes(Number(paintseed))) {
+                            templateLabel.style.backgroundColor = '#DBDBDB';
+                            templateLabel.innerText = 'wiki榜单T4'; // 显示T4
+                            templateLabel.style.padding = '6px';
+                        } else {
+                            row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
+                        }
+
+                         // 自定义模板
+                         if (paintseed !== null && paintseedList.has(paintseed)) {
+                            row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
+                            templateLabel.style.backgroundColor = '#273249';
+                            templateLabel.style.color = '#fff';
+                            let infix = templateLabel.innerText ? "|" : "";
+                            templateLabel.innerText =  "自定义模板🚩" + infix + templateLabel.innerText; // 自定义模板
+                            templateLabel.style.padding = '6px';
+                            highlightedPaintseeds.add(paintseed);
+                            found = true;
+                        }
+
+                        // 获取行内的一个 td 元素，假设是最后一个 td
+                        const lastTd = row.querySelector('td:last-child');
+                        if (lastTd) {
+                            lastTd.appendChild(templateLabel); // 添加显示T1/T2的div
+                            lastTd.appendChild(historyButton);
+                            lastTd.appendChild(templateButton);
+                        }
+
+                        dataList = dataList.filter(item => item.wearValue !== wearValue);
                     }
-                    // 将按钮添加到当前行
-                    row.appendChild(templateLabel); // 添加显示T1/T2的div
-                    row.appendChild(historyButton);
-                    row.appendChild(templateButton);
+                });
+
+            }
+
+            if (urlFlag === 'buff') {
+                const rows = document.querySelectorAll('tr');
+
+                rows.forEach(row => {
+                    // 检查当前行是否包含磨损值
+                    const wearValueDiv = row.querySelector('.wear-value');
+                    if (wearValueDiv && !row.querySelector('.view-history-btn') && !row.querySelector('.view-template-btn')) {
+                        // 添加查看历史价格按钮
+                        const historyButton = document.createElement('button');
+                        historyButton.innerText = '饰品/历史价格';
+                        historyButton.className = 'view-history-btn';
+                        historyButton.style.display = 'block';
+                        historyButton.style.margin = '5px 10px 5px';
+                        historyButton.style.cursor = 'pointer';
+                        historyButton.style.padding = '8px 15px';
+                        historyButton.style.backgroundColor = '#F7971D';
+                        historyButton.style.border = 'none';
+                        historyButton.style.color = '#fff';
+                        historyButton.style.borderRadius = '4px';
+                        historyButton.style.fontSize = '14px';
+                        historyButton.style.transition = 'background-color 0.3s';
+
+                        // 悬浮效果
+                        historyButton.addEventListener('mouseenter', () => {
+                            historyButton.style.backgroundColor = '#ECBB7E';
+                        });
+                        historyButton.addEventListener('mouseleave', () => {
+                            historyButton.style.backgroundColor = '#F7971D';
+                        });
+                        // 获取paintseed值
+                        const assetInfo = JSON.parse(row.getAttribute('data-asset-info'));
+                        const goodsInfo = JSON.parse(row.getAttribute('data-goods-info'));
+
+                        let paintseed = '';
+                        let template = '';
+                        let targetName = '';
+                        let wearValue = null;
+                        let topTemplate = '';
+
+                        // 获取磨损值
+                        const wearText = wearValueDiv.textContent.trim();
+                        const wearMatch = wearText.match(/磨损:\s*(\d+\.\d+)/);
+                        if (wearMatch) {
+                            wearValue = wearMatch[1];
+                        }
+                        if (goodsInfo) {
+                            targetName = goodsInfo.name || '';
+                        }
+                        if (assetInfo) {
+                            paintseed = assetInfo?.info?.paintseed;
+                            template = targetName.includes('多普勒') ? assetInfo?.info?.metaphysic?.data?.name?.toLowerCase() || '' : '';
+                        }
+
+                        topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
+
+                        // 添加查看历史价格按钮点击事件
+                        historyButton.addEventListener('click', function () {
+                            const existingPopups = document.querySelectorAll('.aaaaapopup');
+                            existingPopups.forEach(popup => popup.remove());
+
+                            // 调用请求函数
+                            sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
+                        });
+
+                        // 添加按模板查询价格按钮
+                        const templateButton = document.createElement('button');
+                        templateButton.innerText = '模板/历史价格';
+                        templateButton.className = 'view-template-btn';
+                        templateButton.style.marginLeft = '10px';
+                        templateButton.style.marginBottom = '10px';
+                        templateButton.style.cursor = 'pointer';
+                        templateButton.style.padding = '8px 15px';
+                        templateButton.style.backgroundColor = '#F7971D';
+                        templateButton.style.border = 'none';
+                        templateButton.style.color = '#fff';
+                        templateButton.style.borderRadius = '4px';
+                        templateButton.style.fontSize = '14px';
+                        templateButton.style.transition = 'background-color 0.3s';
+
+                        // 悬浮效果
+                        templateButton.addEventListener('mouseenter', () => {
+                            templateButton.style.backgroundColor = '#ECBB7E';
+                        });
+                        templateButton.addEventListener('mouseleave', () => {
+                            templateButton.style.backgroundColor = '#F7971D';
+                        });
+
+                        templateButton.addEventListener('click', function () {
+                            const existingPopups = document.querySelectorAll('.aaaaapopup');
+                            existingPopups.forEach(popup => popup.remove());
+
+                            // 调用请求函数
+                            sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
+                        });
+                        // 创建显示T1/T2的div
+                        const templateLabel = document.createElement('div');
+                        templateLabel.style.padding = '5px';
+                        templateLabel.style.marginTop = '5px';
+                        templateLabel.style.marginLeft = '10px';
+                        templateLabel.style.backgroundColor = '#fff';
+                        templateLabel.style.borderRadius = '4px';
+                        templateLabel.style.fontSize = '13px';
+                        templateLabel.style.fontWeight = '600';
+                        templateLabel.style.color = '#fff';
+                        templateLabel.style.fontStyle = 'italic';
+                        templateLabel.style.textAlign = 'center';
+                        templateLabel.style.width = '110px';
+                        templateLabel.style.cursor = 'pointer';
+                        templateLabel.addEventListener('click', function () {
+                            // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
+                            window.open('https://csgo2.wiki', '_blank');
+                        });
+                        // 根据模板和paintseed判断是否需要变更背景颜色
+                        if (templatesCollectionT1[topTemplate] && templatesCollectionT1[topTemplate].includes(Number(paintseed))) {
+                            row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
+                            templateLabel.style.backgroundColor = '#273249';
+                            templateLabel.style.color = '#fff';
+                            templateLabel.innerText = 'wiki榜单T1🥇'; // 显示T1
+                        } else if (templatesCollectionT2[topTemplate] && templatesCollectionT2[topTemplate].includes(Number(paintseed))) {
+                            row.style.backgroundColor = '#FFF2E2'; // 满足条件则背景变为蓝色
+                            templateLabel.style.backgroundColor = '#454B58';
+                            templateLabel.innerText = 'wiki榜单T2'; // 显示T2
+                            templateLabel.style.padding = '6px';
+                            templateLabel.style.color = '#fff';
+                        } else if (templatesCollectionT3[topTemplate] && templatesCollectionT3[topTemplate].includes(Number(paintseed))) {
+                            templateLabel.style.backgroundColor = '#B3B3B3';
+                            // row.style.backgroundColor = 'lightgreen'; // 满足条件则背景变为绿色
+                            templateLabel.innerText = 'wiki榜单T3'; // 显示T3
+                            templateLabel.style.padding = '6px';
+                        } else if (templatesCollectionT4[topTemplate] && templatesCollectionT4[topTemplate].includes(Number(paintseed))) {
+                            templateLabel.style.backgroundColor = '#DBDBDB';
+                            templateLabel.innerText = 'wiki榜单T4'; // 显示T4
+                            templateLabel.style.padding = '6px';
+                        } else {
+                            row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
+                        }
+
+                        // 自定义模板
+                        if (paintseed !== null && paintseedList.has(paintseed)) {
+                            row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
+                            templateLabel.style.backgroundColor = '#273249';
+                            templateLabel.style.color = '#fff';
+                            let infix = templateLabel.innerText ? "|" : "";
+                            templateLabel.innerText =  "自定义模板" + infix + templateLabel.innerText; // 自定义模板
+                            templateLabel.style.padding = '6px';
+                            highlightedPaintseeds.add(paintseed);
+                            found = true;
+                        }
+                        // 将按钮添加到当前行
+                        row.appendChild(templateLabel); // 添加显示T1/T2的div
+                        row.appendChild(historyButton);
+                        row.appendChild(templateButton);
+                    }
+                });
+            }
+
+            updatePanel();
+            if (found) {
+                // playAudioNotification();
+            }
+
+
+            return found;
+        }
+
+        function updatePanel() {
+            paintseedDisplay.textContent = Array.from(highlightedPaintseeds).join(', ');
+            paintseedInput.value = Array.from(paintseedList).join(', ');
+            localStorage.setItem('highlightedPaintseeds', JSON.stringify(Array.from(highlightedPaintseeds)));
+        }
+
+        clearButton.addEventListener('click', () => {
+            highlightedPaintseeds.clear();
+            updatePanel();
+        });
+
+        updateButton.addEventListener('click', () => {
+
+            const inputValues = paintseedInput.value
+                .replace(/，|、|\s+/g, ',')
+                .split(',')
+                .map(item => item.trim())
+                .filter(item => item !== '')
+                .map(Number)
+                .filter(n => !isNaN(n));
+                paintseedList = new Set(inputValues);
+                highlightedPaintseeds.clear();
+                processTRElements();
+                updatePanel();
+                localStorage.setItem('paintseedList', JSON.stringify(Array.from(paintseedList)));
+        });
+
+        toggleRefreshButton.addEventListener('click', () => {
+
+            if (refreshIntervalId) {
+                clearInterval(refreshIntervalId);
+                refreshIntervalId = null;
+                toggleRefreshButton.textContent = "刷新直到有漏";
+                localStorage.setItem('refreshActive', 'false');
+
+            } else {
+                refreshIntervalId = setInterval(() => {
+                    if (!processTRElements()) {
+
+                        location.reload();
+                    } else {
+                        clearInterval(refreshIntervalId);
+                        refreshIntervalId = null;
+                        toggleRefreshButton.textContent = "刷新直到有漏";
+                        localStorage.setItem('refreshActive', 'false');
+
+                    }
+                }, 5000);
+                toggleRefreshButton.textContent = "停止刷新";
+                localStorage.setItem('refreshActive', 'true');
+
+            }
+
+        });
+
+        processTRElements();
+
+        const observer = new MutationObserver((mutations) => {
+
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList') {
+                    processTRElements();
                 }
             });
+
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+
+
+        if (localStorage.getItem('refreshActive') === 'true') {
+            toggleRefreshButton.click();
         }
-    }
-  
-    // 每隔1秒检查并为表格行添加按钮
-    setInterval(addHistoryButtonToRows, 1000); // 这样即使定时器还在运行，也只会执行一次
-  
-  })();
+
+        function playAudioNotification() {
+
+            const audioContext = new(window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + 1);
+
+        }
+    });
+})();
