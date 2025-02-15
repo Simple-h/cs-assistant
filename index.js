@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSGO2.WIKI饰品捡漏大师 - 入档模板历史价格查询
 // @namespace    https://github.com/your-github-username/cs-assistant
-// @version      3.0.0.0
+// @version      3.0.0.1
 // @description  CSGO2.WIKI 饰品捡漏大师脚本超实用！能依据排行榜查询多档次饰品数据，快速掌握历史价格。帮你精准定位性价比饰品，不错过任何捡漏时机，在 CSGO2 饰品交易里轻松抢占先机。
 // @author       Jack Mr
 // @match        *://www.youpin898.com/*
@@ -336,7 +336,6 @@
 
     document.addEventListener('DOMContentLoaded', function () {
 
-
         const defaultPaintseedList = new Set([]);
 
         const storedPaintseedList = localStorage.getItem('paintseedList');
@@ -345,8 +344,8 @@
 
         const panel = document.createElement('div');
         panel.style.position = 'fixed';
-        panel.style.bottom = '20px';
-        panel.style.right = '90px';
+        panel.style.top = '20px';
+        panel.style.right = '20px';
         panel.style.backgroundColor = 'rgba(38, 49, 71, 0.9)';
         panel.style.backdropFilter = 'blur(5px)';   // 添加模糊效果
         panel.style.borderRadius = '8px';
@@ -377,6 +376,29 @@
             <button id="toggleRefresh" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">每5S刷新一次直到遇到自定义模板</button>
         `;
         document.body.appendChild(panel);
+
+        let isPanelHidden = true;
+        panel.style.transform = 'translateX(calc(100% + 5px))';
+        panel.style.transition = 'transform 0.3s ease';
+        panel.style.backgroundColor = 'rgba(247, 151, 49, 0.9)';
+
+        panel.addEventListener('click', (e) => {
+            // 只有当点击的是面板背景而不是内部元素时才触发
+            if (e.target === panel) {
+                if (!isPanelHidden) {
+                    // 移动到右边缘，只留下10px
+                    panel.style.transform = 'translateX(calc(100% + 5px))';
+                    panel.style.transition = 'transform 0.3s ease';
+                    panel.style.backgroundColor = 'rgba(247, 151, 49, 0.9)';
+                    isPanelHidden = true;
+                } else {
+                    // 恢复原位
+                    panel.style.transform = 'translateX(0)';
+                    panel.style.backgroundColor = 'rgba(38, 49, 71, 0.9)';
+                    isPanelHidden = false;
+                }
+            }
+        });
 
         const paintseedDisplay = document.getElementById('paintseedList');
         const clearButton = document.getElementById('clearPaintseeds');
