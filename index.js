@@ -67,15 +67,16 @@
         'M9 刺刀（★） | 伽玛多普勒绿宝石': [],
         // 渐变大理石系列--匕首
         '爪子刀（★） | 渐变大理石': [],
-        '蝴蝶刀（★） | 渐变大理石': [9, 27, 90, 125, 183, 203, 232, 254, 329, 351, 372, 397, 402, 404, 441, 459, 473, 483, 485, 506, 537, 559, 626, 632, 647, 725, 727, 753, 756, 764, 785, 791, 805, 810, 818, 858, 868, 909, 941, 962 , 976, 980],
+        '蝴蝶刀（★） | 渐变大理石': [9, 27, 90, 125, 183, 203, 232, 254, 329, 351, 372, 397, 402, 404, 441, 459, 473, 483, 485, 506, 537, 559, 626, 632, 647, 725, 727, 753, 756, 764, 785, 791, 805, 810, 818, 858, 868, 909, 941, 962, 976, 980],
         // 渐变之色系列--手套
-        '专业手套（★） | 渐变之色': [29,279,450,595,649,656,658,777,809,898,933],
+        '专业手套（★） | 渐变之色': [29, 279, 450, 595, 649, 656, 658, 777, 809, 898, 933],
         '运动手套（★） | 大型猎物': [921, 203, 653, 817, 705],
         '运动手套（★） | 夜行衣': [2, 16, 18, 34, 44, 57, 63, 85, 93, 106, 115, 120, 123, 127, 130, 136, 141, 167176, 185, 195, 208, 231, 235, 240, 250, 262, 265, 267, 277, 279, 285, 291, 310, 318, 335, 343, 351, 364, 381, 382, 390, 402, 418, 424, 428, 431, 440, 450, 466, 473, 486, 488, 492, 507, 532, 537, 544, 546, 549, 554, 562, 595, 596, 598, 609, 612, 619, 623, 625, 627, 640, 647, 662, 663, 673, 689, 691, 693, 736, 755, 785, 799, 840, 848, 858, 866, 890, 894, 896, 898, 921, 935, 944, 945, 947, 957, 960, 967, 994],
+        '运动手套（★） | 双栖': [16, 34, 73, 81, 112, 240, 280, 287, 327, 472, 480, 737, 872, 996, 997],
         // 表面淬火--步枪
         'AK-47 | 表面淬火': [661, 670, 321, 955, 179, 151, 168, 387, 555, 592, 617, 760, 809, 828, 11, 20, 30, 54, 73, 139, 194, 269, 332, 341, 375, 377, 398, 407, 418, 432, 463, 507, 522, 608, 615, 638, 664, 693, 773, 782, 793, 798, 838, 839, 891, 917, 919, 942, 965, 978, 4, 13, 74, 92, 103, 112, 126, 137, 147, 169, 178, 187, 189, 209, 228, 236, 242, 248, 278, 306, 310, 344, 349, 363, 389, 397, 403, 426, 428, 429, 430, 434, 442, 447, 450, 456, 468, 479, 494, 512, 526, 532, 557, 575, 577, 605, 622, 628, 632, 636, 640, 645, 648, 681, 685, 689, 690, 695, 698, 704, 708, 715, 721, 733, 750, 770, 775, 788, 791, 823, 842, 844, 849, 862, 868, 872, 878, 879, 887, 888, 905, 922, 927, 950, 961, 969, 985, 993, 996, 1000, 6, 10, 18, 19, 34, 56, 95, 108, 114, 156, 164, 199, 206, 208, 230, 255, 280, 285, 367, 379, 385, 393, 424, 441, 457, 458, 464, 475, 476, 489, 497, 501, 502, 505, 531, 537, 546, 553, 566, 573, 579, 583, 587, 593, 609, 618, 629, 633, 652, 668, 671, 699, 707, 716, 720, 741, 746, 780, 830, 858, 867, 869, 880, 882, 931, 932, 944, 959],
         'AK-47（StatTrak™） | 表面淬火': [661, 670, 321, 955, 179, 151, 168, 387, 555, 592, 617, 760, 809, 828, 11, 20, 30, 54, 73, 139, 194, 269, 332, 341, 375, 377, 398, 407, 418, 432, 463, 507, 522, 608, 615, 638, 664, 693, 773, 782, 793, 798, 838, 839, 891, 917, 919, 942, 965, 978, 4, 13, 74, 92, 103, 112, 126, 137, 147, 169, 178, 187, 189, 209, 228, 236, 242, 248, 278, 306, 310, 344, 349, 363, 389, 397, 403, 426, 428, 429, 430, 434, 442, 447, 450, 456, 468, 479, 494, 512, 526, 532, 557, 575, 577, 605, 622, 628, 632, 636, 640, 645, 648, 681, 685, 689, 690, 695, 698, 704, 708, 715, 721, 733, 750, 770, 775, 788, 791, 823, 842, 844, 849, 862, 868, 872, 878, 879, 887, 888, 905, 922, 927, 950, 961, 969, 985, 993, 996, 1000, 6, 10, 18, 19, 34, 56, 95, 108, 114, 156, 164, 199, 206, 208, 230, 255, 280, 285, 367, 379, 385, 393, 424, 441, 457, 458, 464, 475, 476, 489, 497, 501, 502, 505, 531, 537, 546, 553, 566, 573, 579, 583, 587, 593, 609, 618, 629, 633, 652, 668, 671, 699, 707, 716, 720, 741, 746, 780, 830, 858, 867, 869, 880, 882, 931, 932, 944, 959],
-        'M9 刺刀（★） | 渐变大理石': [575,636,763,897,93,341],
+        'M9 刺刀（★） | 渐变大理石': [575, 636, 763, 897, 93, 341],
         // M4A1 消音型
         'M4A1 消音型 | 伊卡洛斯殒落': [0, 1, 27, 37, 42, 46, 49, 51, 51, 92, 92, 101, 111, 139, 146, 153, 154, 169, 181, 181, 190, 203, 217, 217, 222, 233, 233, 238, 246, 284, 293, 299, 314, 376, 397, 417, 426, 455, 456, 461, 461, 479, 498, 503, 504, 506, 512, 512, 527, 530, 571, 574, 578, 633, 653, 681, 681, 686, 686, 704, 704, 708, 712, 718, 722, 725, 728, 745, 746, 747, 751, 753, 760, 760, 767, 767, 768, 775, 789, 792, 821, 827, 828, 828, 834, 852, 852, 893, 906, 908, 908, 927, 940, 943, 943, 951, 966, 979],
     };
@@ -119,9 +120,10 @@
         '爪子刀（★） | 渐变大理石': [],
         '蝴蝶刀（★） | 渐变大理石': [60, 62, 71, 148, 170, 216, 222, 234, 266, 304, 307, 309, 315, 328, 333, 364, 368, 400, 445, 448, 463, 515, 535, 555, 569, 570, 582, 593, 605, 606, 624, 630, 663, 691, 717, 723, 746, 899, 931, 958],
         // 渐变之色系列--手套
-        '专业手套（★） | 渐变之色': [18,29,34,37,61,65,76,111,141,147,173,226,282,303,317,366,414,427,488,490,629,633,821,916,960,979],
+        '专业手套（★） | 渐变之色': [18, 29, 34, 37, 61, 65, 76, 111, 141, 147, 173, 226, 282, 303, 317, 366, 414, 427, 488, 490, 629, 633, 821, 916, 960, 979],
         '运动手套（★） | 大型猎物': [11, 16, 112, 201, 267, 301, 345, 486, 614, 896],
-        'M9 刺刀（★） | 渐变大理石': [41,87,326,403,468,520,910,961,348,521,527,601,651,714,807,911],
+        '运动手套（★） | 双栖': [44, 58, 175, 220, 230, 231, 277, 281, 340, 380, 405, 427, 489, 493, 494, 495, 496, 515, 566, 583, 602, 647, 703, 704, 705, 706, 736, 802, 803, 984],
+        'M9 刺刀（★） | 渐变大理石': [41, 87, 326, 403, 468, 520, 910, 961, 348, 521, 527, 601, 651, 714, 807, 911],
         //   '运动手套（★） | 夜行衣': [],
         // M4A1 消音型
         'M4A1 消音型 | 伊卡洛斯殒落': [47, 56, 61, 72, 117, 143, 145, 152, 161, 170, 174, 193, 199, 201, 205, 211, 214, 218, 220, 228, 239, 248, 254, 257, 261, 276, 287, 289, 308, 309, 316, 322, 361, 363, 371, 384, 388, 395, 405, 413, 414, 416, 421, 433, 459, 465, 477, 482, 483, 496, 501, 514, 517, 536, 540, 551, 556, 560, 568, 569, 570, 572, 589, 590, 600, 604, 607, 608, 614, 616, 621, 636, 637, 638, 643, 649, 651, 656, 660, 665, 669, 680, 683, 695, 696, 697, 701, 707, 720, 726, 727, 743, 766, 794, 796, 801, 809, 823, 825, 826, 835, 842, 845, 856, 862, 875, 877, 879, 882, 885, 889, 905, 909, 910, 911, 914, 924, 925, 929, 931, 939, 950, 953, 964, 981, 985, 988, 989, 990],
@@ -165,23 +167,23 @@
         'M9 刺刀（★） | 伽玛多普勒绿宝石': [],
         // 渐变大理石系列--匕首
         '爪子刀（★） | 渐变大理石': [],
-        '蝴蝶刀（★） | 渐变大理石': [1, 3, 7, 13, 20, 24, 31, 42, 44, 45, 49, 54, 59, 66, 72, 75, 77, 96, 98, 102, 106, 113, 119, 134, 142, 143, 151, 153, 162, 164, 174, 184, 185, 189, 190, 193,194, 209, 217, 218, 220, 226, 231, 246, 250, 253, 258, 259, 262, 269, 280, 284, 286, 290, 296, 303, 310, 311, 325, 334, 335, 354, 369, 371, 373, 374, 385, 387, 388, 394, 411, 413, 415, 419, 423, 425, 432, 436, 438, 443, 450, 451, 464, 477, 479, 489, 492, 496, 498, 504, 507, 526, 529, 531, 532, 547, 551, 552, 560, 574, 579, 580, 600, 610, 627, 642, 670, 678, 680, 684, 689, 693, 699, 709, 715, 730, 733, 744, 767, 776, 794, 812, 816, 820, 839, 843, 845, 846, 852, 853, 857, 861, 865, 894, 896, 919, 929, 935, 951, 969, 973, 992],
+        '蝴蝶刀（★） | 渐变大理石': [1, 3, 7, 13, 20, 24, 31, 42, 44, 45, 49, 54, 59, 66, 72, 75, 77, 96, 98, 102, 106, 113, 119, 134, 142, 143, 151, 153, 162, 164, 174, 184, 185, 189, 190, 193, 194, 209, 217, 218, 220, 226, 231, 246, 250, 253, 258, 259, 262, 269, 280, 284, 286, 290, 296, 303, 310, 311, 325, 334, 335, 354, 369, 371, 373, 374, 385, 387, 388, 394, 411, 413, 415, 419, 423, 425, 432, 436, 438, 443, 450, 451, 464, 477, 479, 489, 492, 496, 498, 504, 507, 526, 529, 531, 532, 547, 551, 552, 560, 574, 579, 580, 600, 610, 627, 642, 670, 678, 680, 684, 689, 693, 699, 709, 715, 730, 733, 744, 767, 776, 794, 812, 816, 820, 839, 843, 845, 846, 852, 853, 857, 861, 865, 894, 896, 919, 929, 935, 951, 969, 973, 992],
         // 渐变之色系列--手套
-        '专业手套（★） | 渐变之色': [35,37,39,42,69,74,100,101,115,127,128,134,136,137,146,155,170,186,189,191,219,222,235,237,244,252,253,269,271,273,275,278,285,286,290,293,309,310,313,316,319,320,337,351,358,359,362,388,391,394,413,429,430,431,438,440,458,467,468,474,479,483,512,530,542,544,556,562,563,566,569,578,581,583,590,591,592,611,615,618,627,661,689,695,698,724,727,760,767,784,793,801,808,812,816,857,874,877,888,908,917,931,989],
+        '专业手套（★） | 渐变之色': [35, 37, 39, 42, 69, 74, 100, 101, 115, 127, 128, 134, 136, 137, 146, 155, 170, 186, 189, 191, 219, 222, 235, 237, 244, 252, 253, 269, 271, 273, 275, 278, 285, 286, 290, 293, 309, 310, 313, 316, 319, 320, 337, 351, 358, 359, 362, 388, 391, 394, 413, 429, 430, 431, 438, 440, 458, 467, 468, 474, 479, 483, 512, 530, 542, 544, 556, 562, 563, 566, 569, 578, 581, 583, 590, 591, 592, 611, 615, 618, 627, 661, 689, 695, 698, 724, 727, 760, 767, 784, 793, 801, 808, 812, 816, 857, 874, 877, 888, 908, 917, 931, 989],
         '运动手套（★） | 大型猎物': [18, 30, 34, 40, 59, 65, 69, 103, 93, 127, 139, 177, 197, 226, 230, 242, 254, 270, 355, 378, 382, 390, 459, 492, 507, 537, 541, 580, 609, 669, 738, 785, 798, 850, 872, 898, 902, 935],
-        'M9 刺刀（★） | 渐变大理石': [34,205,256,583,648,668,742,834,892,943,944,975],
+        'M9 刺刀（★） | 渐变大理石': [34, 205, 256, 583, 648, 668, 742, 834, 892, 943, 944, 975],
         //   '运动手套（★） | 夜行衣': [],
         // M4A1 消音型
         'M4A1 消音型 | 伊卡洛斯殒落': [10, 15, 24, 33, 40, 45, 55, 65, 67, 79, 81, 82, 84, 87, 96, 104, 105, 114, 118, 119, 132, 135, 138, 149, 171, 212, 215, 223, 225, 243, 252, 255, 258, 260, 288, 298, 320, 321, 329, 333, 339, 342, 349, 367, 379, 392, 404, 406, 409, 422, 434, 445, 462, 464, 470, 472, 480, 489, 500, 510, 519, 523, 531, 533, 539, 552, 558, 559, 579, 585, 591, 593, 597, 599, 629, 634, 639, 677, 679, 687, 711, 719, 724, 730, 741, 752, 758, 771, 777, 781, 797, 804, 806, 810, 815, 824, 832, 839, 843, 850, 855, 859, 863, 874, 880, 883, 888, 899, 928, 930, 932, 956, 968, 971, 974, 977, 983, 984, 997, 998, 999],
     };
     const templatesCollectionT4 = {
     };
-  
+
     console.log('脚本已初始化');
-  
+
     // 拦截 XMLHttpRequest 请求
     const originalXhrOpen = XMLHttpRequest.prototype.open;
-  
+
     // 重写 XMLHttpRequest 的 open 方法
     XMLHttpRequest.prototype.open = function (method, url) {
         // queryOnSaleCommodityList 是uu获取在售列表的接口
@@ -193,10 +195,10 @@
                 if (this.readyState === 4 && this.status === 200) {
                     // 获取接口返回的数据
                     const res = JSON.parse(this.responseText);
-  
+
                     // 存储接口数据，假设接口返回的数据结构适合存储
                     if (res && res.Data) {
-  
+
                         res.Data.forEach(item => {
                             let obj = {
                                 wearValue: item.abrade.replace(/0+$/, '') || '', // 假设接口返回的数据有 wearValue 字段
@@ -206,7 +208,7 @@
                             }
                             dataList.push(obj)
                         });
-  
+
                         console.log("dataList =====> " + JSON.stringify(dataList));
                     }
                 }
@@ -216,11 +218,11 @@
                 }
             };
         }
-  
+
         // 调用原始的 open 方法
         originalXhrOpen.apply(this, arguments);
     };
-  
+
     // 按钮弹出窗口
     function showPopup(dataList, goodsName, type) {
         // 创建背景遮罩
@@ -234,9 +236,9 @@
         overlay.style.zIndex = '9998';
         overlay.style.transition = 'opacity 0.3s ease-in-out';
         overlay.style.opacity = 0;
-  
+
         setTimeout(() => overlay.style.opacity = 1, 10); // 为遮罩添加渐变出现效果
-  
+
         // 创建弹窗容器
         const popup = document.createElement('div');
         popup.style.position = 'fixed';
@@ -255,12 +257,12 @@
         popup.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
         popup.style.opacity = 0;
         popup.className = 'aaaaapopup'; // 添加类名aaaaapopup
-  
+
         setTimeout(() => {
             popup.style.opacity = 1;
             popup.style.transform = 'translate(-50%, -50%) scale(1)';
         }, 10); // 为弹窗添加渐变出现和缩放效果
-  
+
         // 创建内容容器并设置最大高度与隐藏滚动条
         const contentContainer = document.createElement('div');
         contentContainer.style.maxHeight = '600px';
@@ -268,11 +270,11 @@
         contentContainer.style.padding = '20px';
         contentContainer.style.fontSize = '16px';
         contentContainer.style.lineHeight = '1.2';
-  
+
         // 隐藏滚动条，但支持滚动
         contentContainer.style.scrollbarWidth = 'none'; // Firefox
         contentContainer.style.msOverflowStyle = 'none'; // IE 10+
-  
+
         // 使用 Webkit 方式隐藏滚动条
         contentContainer.style.webkitOverflowScrolling = 'touch'; // 平滑滚动效果
         const style = document.createElement('style');
@@ -288,10 +290,10 @@
   `;
         document.head.appendChild(style);
         contentContainer.classList.add('hide-scrollbar'); // 添加样式类以隐藏滚动条
-  
+
         // 弹窗内容
         let content = `<h3 style="text-align:center; color:#222; font-size: 24px; font-weight: 700; margin-bottom: 25px;">${type === '1' ? '磨损' : '模板'}价格查询</h3>`;
-  
+
         // 遍历数据列表并生成内容
         dataList.forEach((data, index) => {
             const isLastItem = index === dataList.length - 1;
@@ -311,10 +313,10 @@
   </div>
   `;
         });
-  
+
         // 将内容添加到内容容器中
         contentContainer.innerHTML = content;
-  
+
         // 创建关闭文本
         const closeText = document.createElement('span');
         closeText.innerText = '关闭';
@@ -326,15 +328,15 @@
         closeText.style.cursor = 'pointer';
         closeText.style.fontWeight = '400';
         closeText.style.transition = 'color 0.3s';
-  
+
         closeText.addEventListener('mouseenter', () => {
             closeText.style.color = '#666';
         });
-  
+
         closeText.addEventListener('mouseleave', () => {
             closeText.style.color = '#273249';
         });
-  
+
         closeText.addEventListener('click', () => {
             popup.style.opacity = 0;
             popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
@@ -344,49 +346,49 @@
                 document.body.removeChild(overlay);
             }, 300);
         });
-  
+
         // 将关闭文本和内容容器添加到弹窗
         popup.appendChild(contentContainer);
         popup.appendChild(closeText);
-  
+
         // 添加到页面
         document.body.appendChild(overlay);
         document.body.appendChild(popup);
     }
-  
+
     // 发送查询请求的函数
     function sendRequest(wearValue, paintseed, template, type, targetName) {
         // 第一个接口的URL
         const firstApiUrl = 'https://sdt-api.ok-skins.com/user/skin/v2/skin-info?content=' + wearValue + '&timestamp=' + new Date().getTime();
-  
+
         // 请求第一个接口
         fetch(firstApiUrl, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'X-App-Version': '1.0.0',
-                    'X-Currency': 'CNY',
-                    'X-Device': '1',
-                    'X-Device-Id': '6ff4f894-4c0a-49a4-935c-2303c4185ecb',
-                    'Language': 'zh_CN',
-                    'Origin': 'https://steamdt.com',
-                    'Referer': 'https://steamdt.com/',
-                }
-            })
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-App-Version': '1.0.0',
+                'X-Currency': 'CNY',
+                'X-Device': '1',
+                'X-Device-Id': '6ff4f894-4c0a-49a4-935c-2303c4185ecb',
+                'Language': 'zh_CN',
+                'Origin': 'https://steamdt.com',
+                'Referer': 'https://steamdt.com/',
+            }
+        })
             .then(response => response.json()) // 解析第一个接口的响应
             .then(firstApiData => {
-  
+
                 // 遍历第一个接口返回的数组，寻找匹配的名称
-                const matchedItem = firstApiData ?.data ?.find(item => item.assetDetail ?.classInfo ?.name === targetName);
-  
+                const matchedItem = firstApiData?.data?.find(item => item.assetDetail?.classInfo?.name === targetName);
+
                 if (matchedItem) {
                     const itemId = matchedItem.assetDetail.classInfo.itemId; // 获取 itemId
                     const goodsName = matchedItem.assetDetail.classInfo.name; // 获取 goodsName
-  
+
                     // 第二个接口的URL
                     const secondApiUrl = 'https://sdt-api.ok-skins.com/item/trade/v1/list?timestamp=' + new Date().getTime();
-  
+
                     const headers = {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
@@ -398,7 +400,7 @@
                         'Origin': 'https://steamdt.com',
                         'Referer': 'https://steamdt.com/',
                     };
-  
+
                     const requestData = {
                         paintSeed: paintseed ? [paintseed] : [], // 传入 paintseed 数据
                         specialStyles: template ? [template] : [], // 传入 template 数据
@@ -412,13 +414,13 @@
                         paintIndex: [], // 根据需求调整
                         timestamp: new Date().getTime().toString(), // 使用当前时间戳
                     };
-  
+
                     // 使用 fetch 发送 POST 请求
                     fetch(secondApiUrl, {
-                            method: 'POST',
-                            headers: headers,
-                            body: JSON.stringify(requestData),
-                        })
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify(requestData),
+                    })
                         .then(response => response.json())
                         .then(data => {
                             if (data && data.data.list.length > 0) {
@@ -434,18 +436,18 @@
             })
             .catch(error => {
                 console.error('第一个接口请求失败:', error);
-  
+
             });
     }
-  
+
     document.addEventListener('DOMContentLoaded', function () {
-  
+
         const defaultPaintseedList = new Set([]);
-  
+
         const storedPaintseedList = localStorage.getItem('paintseedList');
         let paintseedList = storedPaintseedList ? new Set(JSON.parse(storedPaintseedList)) : new Set(defaultPaintseedList);
         let refreshIntervalId = null;
-  
+
         const panel = document.createElement('div');
         panel.style.position = 'fixed';
         panel.style.top = '20px';
@@ -480,12 +482,12 @@
             <button id="toggleRefresh" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">每5S刷新一次直到遇到自定义模板</button>
         `;
         document.body.appendChild(panel);
-  
+
         let isPanelHidden = true;
         panel.style.transform = 'translateX(calc(100% + 5px))';
         panel.style.transition = 'transform 0.3s ease';
         panel.style.backgroundColor = 'rgba(247, 151, 49, 0.9)';
-  
+
         panel.addEventListener('click', (e) => {
             // 只有当点击的是面板背景而不是内部元素时才触发
             if (e.target === panel) {
@@ -503,24 +505,24 @@
                 }
             }
         });
-  
+
         const paintseedDisplay = document.getElementById('paintseedList');
         const clearButton = document.getElementById('clearPaintseeds');
         const updateButton = document.getElementById('updatePaintseeds');
         const paintseedInput = document.getElementById('paintseedInput');
         const toggleRefreshButton = document.getElementById('toggleRefresh');
-  
+
         let highlightedPaintseeds = new Set(JSON.parse(localStorage.getItem('highlightedPaintseeds') || '[]'));
         updatePanel();
-  
+
         function processTRElements() {
             let found = false;
             if (urlFlag === 'yy') {
                 if (dataList.length <= 0) return found;
                 const rows = document.querySelectorAll('tr.ant-table-row');
-  
+
                 rows.forEach((row) => {
-  
+
                     // 检查当前行是否包含磨损值
                     const wearValueDiv = row.querySelector('.wear-degree-num___AbgA1 span');
                     const wearText = wearValueDiv.textContent.trim();
@@ -529,7 +531,7 @@
                     if (wearMatch) {
                         wearValue = wearMatch[1];
                     }
-  
+
                     // dataList的磨损值匹配wearValue
                     const matchedData = dataList.find(item => item.wearValue === wearValue);
                     if (matchedData) {
@@ -538,11 +540,11 @@
                         let paintseed = matchedData.paintseed || '';
                         let targetName = matchedData.targetName || '';
                         let topTemplate = '';
-  
+
                         template = targetName.includes('多普勒') ? template.toLowerCase() || '' : '';
                         topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
-  
-  
+
+
                         // 添加查看历史价格按钮
                         const historyButton = document.createElement('button');
                         historyButton.innerText = '查看历史价格';
@@ -558,7 +560,7 @@
                         historyButton.style.fontSize = '14px';
                         historyButton.style.transition = 'background-color 0.3s';
                         historyButton.style.width = '130px';
-  
+
                         // 悬浮效果
                         historyButton.addEventListener('mouseenter', () => {
                             historyButton.style.backgroundColor = '#D0801B';
@@ -566,16 +568,16 @@
                         historyButton.addEventListener('mouseleave', () => {
                             historyButton.style.backgroundColor = '#F7971D';
                         });
-  
+
                         // 添加查看历史价格按钮点击事件
                         historyButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-  
+
                             // 调用请求函数
                             sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
                         });
-  
+
                         // 添加按模板查询价格按钮
                         const templateButton = document.createElement('button');
                         templateButton.innerText = '按模板查询价格';
@@ -589,7 +591,7 @@
                         templateButton.style.fontSize = '14px';
                         templateButton.style.transition = 'background-color 0.3s';
                         templateButton.style.width = '130px';
-  
+
                         // 悬浮效果
                         templateButton.addEventListener('mouseenter', () => {
                             templateButton.style.backgroundColor = '#D0801B';
@@ -597,11 +599,11 @@
                         templateButton.addEventListener('mouseleave', () => {
                             templateButton.style.backgroundColor = '#F7971D';
                         });
-  
+
                         templateButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-  
+
                             // 调用请求函数
                             sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
                         });
@@ -645,19 +647,19 @@
                         } else {
                             row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
                         }
-  
-                         // 自定义模板
-                         if (paintseed !== null && paintseedList.has(paintseed)) {
+
+                        // 自定义模板
+                        if (paintseed !== null && paintseedList.has(paintseed)) {
                             row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
                             templateLabel.style.backgroundColor = '#273249';
                             templateLabel.style.color = '#fff';
                             let infix = templateLabel.innerText ? "|" : "";
-                            templateLabel.innerText =  "自定义模板🚩" + infix + templateLabel.innerText; // 自定义模板
+                            templateLabel.innerText = "自定义模板🚩" + infix + templateLabel.innerText; // 自定义模板
                             templateLabel.style.padding = '6px';
                             highlightedPaintseeds.add(paintseed);
                             found = true;
                         }
-  
+
                         // 获取行内的一个 td 元素，假设是最后一个 td
                         const lastTd = row.querySelector('td:last-child');
                         if (lastTd) {
@@ -665,16 +667,16 @@
                             lastTd.appendChild(historyButton);
                             lastTd.appendChild(templateButton);
                         }
-  
+
                         dataList = dataList.filter(item => item.wearValue !== wearValue);
                     }
                 });
-  
+
             }
-  
+
             if (urlFlag === 'buff') {
                 const rows = document.querySelectorAll('tr');
-  
+
                 rows.forEach(row => {
                     // 检查当前行是否包含磨损值
                     const wearValueDiv = row.querySelector('.wear-value');
@@ -693,7 +695,7 @@
                         historyButton.style.borderRadius = '4px';
                         historyButton.style.fontSize = '14px';
                         historyButton.style.transition = 'background-color 0.3s';
-  
+
                         // 悬浮效果
                         historyButton.addEventListener('mouseenter', () => {
                             historyButton.style.backgroundColor = '#ECBB7E';
@@ -704,13 +706,13 @@
                         // 获取paintseed值
                         const assetInfo = JSON.parse(row.getAttribute('data-asset-info'));
                         const goodsInfo = JSON.parse(row.getAttribute('data-goods-info'));
-  
+
                         let paintseed = '';
                         let template = '';
                         let targetName = '';
                         let wearValue = null;
                         let topTemplate = '';
-  
+
                         // 获取磨损值
                         const wearText = wearValueDiv.textContent.trim();
                         const wearMatch = wearText.match(/磨损:\s*(\d+\.\d+)/);
@@ -724,18 +726,18 @@
                             paintseed = assetInfo?.info?.paintseed;
                             template = targetName.includes('多普勒') ? assetInfo?.info?.metaphysic?.data?.name?.toLowerCase() || '' : '';
                         }
-  
+
                         topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
-  
+
                         // 添加查看历史价格按钮点击事件
                         historyButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-  
+
                             // 调用请求函数
                             sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
                         });
-  
+
                         // 添加按模板查询价格按钮
                         const templateButton = document.createElement('button');
                         templateButton.innerText = '模板/历史价格';
@@ -750,7 +752,7 @@
                         templateButton.style.borderRadius = '4px';
                         templateButton.style.fontSize = '14px';
                         templateButton.style.transition = 'background-color 0.3s';
-  
+
                         // 悬浮效果
                         templateButton.addEventListener('mouseenter', () => {
                             templateButton.style.backgroundColor = '#ECBB7E';
@@ -758,11 +760,11 @@
                         templateButton.addEventListener('mouseleave', () => {
                             templateButton.style.backgroundColor = '#F7971D';
                         });
-  
+
                         templateButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-  
+
                             // 调用请求函数
                             sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
                         });
@@ -808,14 +810,14 @@
                         } else {
                             row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
                         }
-  
+
                         // 自定义模板
                         if (paintseed !== null && paintseedList.has(paintseed)) {
                             row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
                             templateLabel.style.backgroundColor = '#273249';
                             templateLabel.style.color = '#fff';
                             let infix = templateLabel.innerText ? "|" : "";
-                            templateLabel.innerText =  "自定义模板" + infix + templateLabel.innerText; // 自定义模板
+                            templateLabel.innerText = "自定义模板" + infix + templateLabel.innerText; // 自定义模板
                             templateLabel.style.padding = '6px';
                             highlightedPaintseeds.add(paintseed);
                             found = true;
@@ -827,111 +829,110 @@
                     }
                 });
             }
-  
+
             updatePanel();
             if (found) {
                 // playAudioNotification();
             }
-  
-  
+
+
             return found;
         }
-  
+
         function updatePanel() {
             paintseedDisplay.textContent = Array.from(highlightedPaintseeds).join(', ');
             paintseedInput.value = Array.from(paintseedList).join(', ');
             localStorage.setItem('highlightedPaintseeds', JSON.stringify(Array.from(highlightedPaintseeds)));
         }
-  
+
         clearButton.addEventListener('click', () => {
             highlightedPaintseeds.clear();
             updatePanel();
         });
-  
+
         updateButton.addEventListener('click', () => {
-  
+
             const inputValues = paintseedInput.value
-            .replace(/，|、|\s+/g, ',')
-            .split(',')
+                .replace(/，|、|\s+/g, ',')
+                .split(',')
                 .map(item => item.trim())
                 .filter(item => item !== '')
                 .map(Number)
                 .filter(n => !isNaN(n));
-                paintseedList = new Set(inputValues);
-                highlightedPaintseeds.clear();
-                processTRElements();
-                updatePanel();
-                localStorage.setItem('paintseedList', JSON.stringify(Array.from(paintseedList)));
+            paintseedList = new Set(inputValues);
+            highlightedPaintseeds.clear();
+            processTRElements();
+            updatePanel();
+            localStorage.setItem('paintseedList', JSON.stringify(Array.from(paintseedList)));
         });
-  
+
         toggleRefreshButton.addEventListener('click', () => {
-  
+
             if (refreshIntervalId) {
                 clearInterval(refreshIntervalId);
                 refreshIntervalId = null;
                 toggleRefreshButton.textContent = "刷新直到有漏";
                 localStorage.setItem('refreshActive', 'false');
-  
+
             } else {
                 refreshIntervalId = setInterval(() => {
                     if (!processTRElements()) {
-  
+
                         location.reload();
                     } else {
                         clearInterval(refreshIntervalId);
                         refreshIntervalId = null;
                         toggleRefreshButton.textContent = "刷新直到有漏";
                         localStorage.setItem('refreshActive', 'false');
-  
+
                     }
                 }, 5000);
                 toggleRefreshButton.textContent = "停止刷新";
                 localStorage.setItem('refreshActive', 'true');
-  
+
             }
-  
+
         });
-  
+
         processTRElements();
-  
+
         const observer = new MutationObserver((mutations) => {
-  
+
             mutations.forEach((mutation) => {
                 if (mutation.type === 'childList') {
                     processTRElements();
                 }
             });
-  
+
         });
-  
+
         observer.observe(document.body, {
             childList: true,
             subtree: true
         });
-  
-  
-  
+
+
+
         if (localStorage.getItem('refreshActive') === 'true') {
             toggleRefreshButton.click();
         }
-  
+
         function playAudioNotification() {
-  
-            const audioContext = new(window.AudioContext || window.webkitAudioContext)();
+
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const oscillator = audioContext.createOscillator();
             const gainNode = audioContext.createGain();
-  
+
             oscillator.type = 'sine';
             oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
             gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
-  
+
             oscillator.connect(gainNode);
             gainNode.connect(audioContext.destination);
-  
+
             oscillator.start();
             oscillator.stop(audioContext.currentTime + 1);
-  
+
         }
     });
-  })();
-  
+})();
