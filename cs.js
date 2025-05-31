@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cs助手
 // @namespace    https://github.com/your-github-username/cs-assistant
-// @version      3.0.0.2
+// @version      3.0.0.3
 // @description  CSGO2饰品捡漏大师脚本超实用！能依据排行榜查询多档次饰品数据，快速掌握历史价格。帮你精准定位性价比饰品，不错过任何捡漏时机，在 CSGO2 饰品交易里轻松抢占先机。
 // @author       Jack Mr
 // @match        *://*.youpin898.com/*
