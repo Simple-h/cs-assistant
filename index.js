@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSGO2.WIKI饰品捡漏大师 - 入档模板历史价格查询
 // @namespace    https://github.com/your-github-username/cs-assistant
-// @version      4.0.0.1
+// @version      5.0.0.1
 // @description  CSGO2.WIKI 饰品捡漏大师脚本超实用！能依据排行榜查询多档次饰品数据，快速掌握历史价格。帮你精准定位性价比饰品，不错过任何捡漏时机，在 CSGO2 饰品交易里轻松抢占先机。
 // @author       Jack Mr
 // @match        *://*.youpin898.com/*
@@ -522,6 +522,13 @@
                 const rows = document.querySelectorAll('tr.ant-table-row');
 
                 rows.forEach((row) => {
+                    // 防止重复处理：检查是否已经添加过按钮
+                    if (row.querySelector('.view-history-btn') || row.querySelector('.cs-assistant-processed')) {
+                        return; // 跳过已处理的行
+                    }
+                    
+                    // 添加标记，表示这一行已经被处理过
+                    row.classList.add('cs-assistant-processed');
 
                     // 检查当前行是否包含磨损值
                     const wearValueDiv = row.querySelector('.wear-degree-num___AbgA1 span');
@@ -875,18 +882,35 @@
                 localStorage.setItem('refreshActive', 'false');
 
             } else {
+                let refreshCount = 0;
+                const maxRefreshes = 20; // 最多刷新20次，防止无限刷新
+                
                 refreshIntervalId = setInterval(() => {
+                    refreshCount++;
+                    
                     if (!processTRElements()) {
-
-                        location.reload();
+                        if (refreshCount >= maxRefreshes) {
+                            clearInterval(refreshIntervalId);
+                            refreshIntervalId = null;
+                            toggleRefreshButton.textContent = "刷新直到有漏";
+                            localStorage.setItem('refreshActive', 'false');
+                            alert('已达到最大刷新次数限制，请手动检查或调整自定义模板设置');
+                            return;
+                        }
+                        
+                        // 增加刷新间隔，减少服务器压力
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
                     } else {
                         clearInterval(refreshIntervalId);
                         refreshIntervalId = null;
                         toggleRefreshButton.textContent = "刷新直到有漏";
                         localStorage.setItem('refreshActive', 'false');
-
+                        // 找到目标后播放提示音
+                        playAudioNotification();
                     }
-                }, 5000);
+                }, 8000); // 增加到8秒间隔，减少频率
                 toggleRefreshButton.textContent = "停止刷新";
                 localStorage.setItem('refreshActive', 'true');
 
@@ -897,13 +921,30 @@
         processTRElements();
 
         const observer = new MutationObserver((mutations) => {
-
+            let shouldProcess = false;
+            
             mutations.forEach((mutation) => {
                 if (mutation.type === 'childList') {
-                    processTRElements();
+                    // 只有当添加的节点中包含新的表格行时才处理
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            if (node.matches && node.matches('tr.ant-table-row')) {
+                                shouldProcess = true;
+                            } else if (node.querySelector && node.querySelector('tr.ant-table-row')) {
+                                shouldProcess = true;
+                            }
+                        }
+                    });
                 }
             });
-
+            
+            if (shouldProcess) {
+                // 使用防抖，避免频繁调用
+                clearTimeout(window.processTRElementsTimeout);
+                window.processTRElementsTimeout = setTimeout(() => {
+                    processTRElements();
+                }, 100);
+            }
         });
 
         observer.observe(document.body, {

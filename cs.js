@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cs助手
 // @namespace    https://github.com/your-github-username/cs-assistant
-// @version      1.0.0.4
+// @version      3.0.0.4
 // @description  CSGO2饰品捡漏大师脚本超实用！能依据排行榜查询多档次饰品数据，快速掌握历史价格。帮你精准定位性价比饰品，不错过任何捡漏时机，在 CSGO2 饰品交易里轻松抢占先机。
 // @author       Jack Mr
 // @match        *://*.youpin898.com/*
@@ -50,7 +50,7 @@
         'M9 刺刀（★） | 多普勒红宝石': [],
         'M9 刺刀（★） | 多普勒蓝宝石': [],
         // 伽玛多普勒系列--匕首
-        '爪子刀（★） | 伽玛多普勒p1': [547, 630, 135, 311, 717, 445, 253, 746, 387, 530, 610, 730, 196, 574, 49, 384, 262, 540, 98, 106, 939, 296, 218, 226, 858, 220, 998, 594, 88, 606, 31, 552, 783, 989, 409, 217, 812, 113],
+        '爪子刀（★） | 伽玛多普勒p1': [547,630,311,717,445,253,746,387,530,610,730,196,574,49,384,262,540,98,106,939,296,218,226,858,220,998,594,88,606,31,552,783,989,409,217,812,972,354,865,287,817],
         '爪子刀（★） | 伽玛多普勒p2': [15, 19, 56, 101, 133, 159, 192, 214, 239, 261, 301, 350, 474, 495, 501, 505, 565, 585, 603, 623, 635, 682, 707, 748, 877, 938, 986, 987],
         '爪子刀（★） | 伽玛多普勒p3': [47, 687, 361, 737, 898, 276, 336, 782, 953, 154, 324, 860, 293, 878, 161, 442, 815, 698, 433, 587, 979, 22, 863, 37, 487, 811, 446, 392, 416, 752, 758, 104, 774, 157, 993, 933, 210, 895, 740, 389, 808, 79, 289, 757, 769, 176, 955, 528, 645, 179, 990, 886, 821, 117, 835, 984, 376, 658, 995, 974, 33],
         '爪子刀（★） | 伽玛多普勒p4': [16, 48, 90, 129, 146, 152, 182, 241, 252, 281, 292, 332, 344, 359, 393, 452, 457, 522, 541, 578, 602, 631, 649, 652, 685, 688, 701, 705, 743, 773, 780, 792, 918, 923, 994],
@@ -70,6 +70,7 @@
         '蝴蝶刀（★） | 渐变大理石': [9, 27, 90, 125, 183, 203, 232, 254, 329, 351, 372, 397, 402, 404, 441, 459, 473, 483, 485, 506, 537, 559, 626, 632, 647, 725, 727, 753, 756, 764, 785, 791, 805, 810, 818, 858, 868, 909, 941, 962, 976, 980],
         // 渐变之色系列--手套
         '专业手套（★） | 渐变之色': [29, 279, 450, 595, 649, 656, 658, 777, 809, 898, 933],
+        '专业手套（★） | 深红和服': [458, 515, 559, 560, 684, 692, 699, 866, 932],
         '运动手套（★） | 大型猎物': [921, 203, 653, 817, 705],
         '运动手套（★） | 夜行衣': [2, 16, 18, 34, 44, 57, 63, 85, 93, 106, 115, 120, 123, 127, 130, 136, 141, 167176, 185, 195, 208, 231, 235, 240, 250, 262, 265, 267, 277, 279, 285, 291, 310, 318, 335, 343, 351, 364, 381, 382, 390, 402, 418, 424, 428, 431, 440, 450, 466, 473, 486, 488, 492, 507, 532, 537, 544, 546, 549, 554, 562, 595, 596, 598, 609, 612, 619, 623, 625, 627, 640, 647, 662, 663, 673, 689, 691, 693, 736, 755, 785, 799, 840, 848, 858, 866, 890, 894, 896, 898, 921, 935, 944, 945, 947, 957, 960, 967, 994],
         '运动手套（★） | 双栖': [16, 34, 73, 81, 112, 240, 280, 287, 327, 472, 480, 737, 872, 996, 997],
@@ -79,6 +80,18 @@
         'M9 刺刀（★） | 渐变大理石': [575, 636, 763, 897, 93, 341],
         // M4A1 消音型
         'M4A1 消音型 | 伊卡洛斯殒落': [0, 1, 27, 37, 42, 46, 49, 51, 51, 92, 92, 101, 111, 139, 146, 153, 154, 169, 181, 181, 190, 203, 217, 217, 222, 233, 233, 238, 246, 284, 293, 299, 314, 376, 397, 417, 426, 455, 456, 461, 461, 479, 498, 503, 504, 506, 512, 512, 527, 530, 571, 574, 578, 633, 653, 681, 681, 686, 686, 704, 704, 708, 712, 718, 722, 725, 728, 745, 746, 747, 751, 753, 760, 760, 767, 767, 768, 775, 789, 792, 821, 827, 828, 828, 834, 852, 852, 893, 906, 908, 908, 927, 940, 943, 943, 951, 966, 979],
+        '短剑（★） | 多普勒p4': [34, 41, 87, 93, 105, 201, 205, 256, 326, 341, 348, 380, 403, 422, 449, 468, 494, 517, 520, 521, 527, 550, 571, 575, 576, 577, 583, 601, 636, 648, 651, 664, 668, 714, 742, 763, 807, 834, 848, 892, 897, 910, 911, 925, 943, 944, 961, 975],
+        '格洛克 18 型 | 伽玛多普勒p1': [34, 41, 87, 93, 105, 201, 205, 256, 326, 341, 348, 380, 403, 422, 449, 468, 494, 517, 520, 521, 527, 550, 571, 575, 576, 577, 583, 601, 636, 648, 651, 664, 668, 714, 742, 763, 807, 834, 848, 892, 897, 910, 911, 925, 943, 944, 961, 975],
+        '格洛克 18 型 | 伽玛多普勒p2': [34, 41, 87, 93, 105, 201, 205, 256, 326, 341, 348, 380, 403, 422, 449, 468, 494, 517, 520, 521, 527, 550, 571, 575, 576, 577, 583, 601, 636, 648, 651, 664, 668, 714, 742, 763, 807, 834, 848, 892, 897, 910, 911, 925, 943, 944, 961, 975],
+        '格洛克 18 型 | 伽玛多普勒p3': [6, 12, 22, 22, 33, 37, 37, 47, 76, 94, 154, 191, 210, 212, 227, 276, 285, 293, 302, 324, 336, 361, 392, 424, 430, 433, 442, 446, 458, 487, 487, 513, 538, 564, 586, 587, 587, 612, 687, 698, 698, 719, 762, 782, 790, 811, 811, 815, 815, 860, 863, 863, 875, 878, 887, 898, 915, 953, 960, 979, 979, 161, 442],
+        '格洛克 18 型 | 伽玛多普勒p4': [5, 8, 32, 58, 68, 149, 165, 171, 178, 202, 206, 213, 233, 243, 287, 337, 356, 378, 405, 406, 444, 454, 461, 471, 493, 539, 621, 637, 653, 672, 683, 696, 728, 761, 766, 770, 803, 817, 826, 854, 867, 873, 876, 922, 949, 959, 966, 971, 997],
+        '格洛克 18 型 | 伽玛多普勒绿宝石': [16, 17, 34, 43, 59, 66, 69, 80, 92, 100, 101, 103, 109, 113, 114, 116, 117, 123, 131, 158, 161, 182, 191, 209, 211, 217, 219, 242, 263, 268, 277, 282, 288, 296, 305, 306, 360, 362, 365, 378, 392, 393, 397, 400, 408, 416, 418, 426, 427, 429, 446, 455, 463, 465, 468, 476, 478, 479, 484, 486, 499, 500, 505, 509, 513, 517, 522, 526, 540, 547, 551, 552, 557, 559, 560, 562, 563, 566, 567, 568, 571, 572, 578, 582, 583, 588, 592, 602, 610, 622, 639, 651, 655, 657, 659, 660, 668, 669, 675, 677, 678, 681, 686, 700, 703, 856, 883, 891, 900, 903, 904, 910, 911, 914, 915, 928, 930, 931, 934, 935, 937, 943, 944, 956, 961],
+        '折叠刀（★） | 多普勒p1': [20, 24, 31, 49, 66, 88, 106, 113, 116, 160, 174, 184, 189, 193, 218, 220, 226, 235, 250, 284, 286, 303, 325, 369, 373, 394, 419, 443, 450, 464, 477, 480, 492, 498, 504, 529, 531, 551, 560, 574, 594, 610, 616, 627, 646, 680, 699, 730, 744, 750, 820, 843, 852, 865, 935, 992, 998, 999],
+        '折叠刀（★） | 多普勒p2': [7, 39, 59, 72, 77, 106, 119, 153, 166, 190, 194, 209, 244, 259, 265, 279, 286, 290, 360, 369, 374, 383, 408, 409, 419, 423, 432, 443, 469, 502, 526, 574, 594, 595, 600, 638, 646, 650, 659, 720, 816, 839, 857, 859, 861, 893, 896, 913, 951, 954, 969, 983, 999],
+        '折叠刀（★） | 多普勒p3': [11, 29, 46, 84, 89, 107, 136, 137, 141, 147, 150, 168, 224, 236, 278, 308, 345, 375, 395, 396, 399, 401, 428, 430, 455, 465, 486, 599, 639, 657, 690, 703, 712, 745, 747, 749, 751, 754, 781, 789, 793, 798, 800, 824, 825, 827, 838, 840, 849, 856, 872, 914, 936, 956, 968, 981],
+        '折叠刀（★） | 多普勒p4': [34, 41, 87, 93, 105, 205, 256, 326, 341, 348, 380, 403, 422, 449, 468, 494, 517, 520, 521, 527, 550, 571, 575, 576, 577, 583, 601, 636, 648, 651, 664, 668, 714, 742, 763, 807, 834, 848, 892, 897, 910, 911, 925, 943, 944, 961, 975],
+        '折叠刀（★） | 多普勒红宝石': [],
+  
     };
     const templatesCollectionT2 = {
         // 多普勒系列--匕首
@@ -101,7 +114,7 @@
         'M9 刺刀（★） | 多普勒红宝石': [],
         'M9 刺刀（★） | 多普勒蓝宝石': [],
         // 伽玛多普勒系列--匕首
-        '爪子刀（★） | 伽玛多普勒p1': [972, 190, 354, 110, 865, 627, 287, 857, 785, 419, 899, 817, 935, 861, 160, 423, 404, 60, 803, 194, 913, 600, 678, 243, 928, 469, 694, 907, 432, 369, 125, 868, 795, 444, 667, 982, 230, 632, 20, 589, 723, 680, 184, 776, 922, 853, 570, 949, 370, 202, 66, 77, 119, 787, 607, 246, 222, 874, 303, 425, 764, 507, 328, 621, 286, 526, 450, 894, 696, 670, 388, 844, 555, 325, 962, 598, 766, 871, 683, 436, 716, 203, 373, 908, 711, 162, 489, 193, 58, 204],
+        '爪子刀（★） | 伽玛多普勒p1': [113,190,110,627,785,899,935,861,160,404,60,803,678,243,907,432,369,125,868,795,444,667,982,230,632,20,589,723184,922,853,570,949,370,202,66,77,119,787,607,246,222,874,425,764,328,621,894,525,450,696,670,388,844,555,325,962,766,683,203,908,204,579,269,480,412,560,464,992,551,116,843,969,705,178,143,580,0,929,1,258],
         '爪子刀（★） | 伽玛多普勒p2': [13, 25, 35, 144, 174, 199, 200, 207, 258, 317, 343, 349, 355, 410, 434, 439, 443, 451, 479, 544, 581, 616, 618, 620, 625, 629, 644, 671, 689, 741, 750, 833, 870, 889, 927, 964, 967, 973],
         '爪子刀（★） | 伽玛多普勒p3': [23, 187, 277, 851, 18, 866, 111, 596, 382, 299, 921, 916, 697, 421, 802, 273, 666, 942, 431, 902, 57, 312, 342, 806, 901, 884, 760, 804, 63, 163, 323, 633, 588, 78, 549, 885, 924, 864, 592, 920, 453, 946, 991, 512, 298, 584, 167, 654, 240, 801, 291, 518, 604, 118, 114, 437, 661, 318, 491, 828],
         '爪子刀（★） | 伽玛多普勒p4': [5, 8, 14, 32, 108, 112, 126, 188, 213, 233, 274, 292, 337, 340, 356, 378, 405, 406, 412, 454, 461, 471, 493, 539, 614, 628, 653, 673, 702, 728, 732, 736, 761, 777, 787, 826, 832, 854, 867, 873, 874, 876, 908, 959, 966, 971, 997],
@@ -121,13 +134,20 @@
         '蝴蝶刀（★） | 渐变大理石': [60, 62, 71, 148, 170, 216, 222, 234, 266, 304, 307, 309, 315, 328, 333, 364, 368, 400, 445, 448, 463, 515, 535, 555, 569, 570, 582, 593, 605, 606, 624, 630, 663, 691, 717, 723, 746, 899, 931, 958],
         // 渐变之色系列--手套
         '专业手套（★） | 渐变之色': [18, 29, 34, 37, 61, 65, 76, 111, 141, 147, 173, 226, 282, 303, 317, 366, 414, 427, 488, 490, 629, 633, 821, 916, 960, 979],
+        '专业手套（★） | 深红和服': [6, 79, 80, 115, 208, 215, 241, 290, 330, 385, 402, 491, 498, 698, 721, 753, 841, 842, 866, 958, 968],
         '运动手套（★） | 大型猎物': [11, 16, 112, 201, 267, 301, 345, 486, 614, 896],
         '运动手套（★） | 双栖': [44, 58, 175, 220, 230, 231, 277, 281, 340, 380, 405, 427, 489, 493, 494, 495, 496, 515, 566, 583, 602, 647, 703, 704, 705, 706, 736, 802, 803, 984],
         'M9 刺刀（★） | 渐变大理石': [41, 87, 326, 403, 468, 520, 910, 961, 348, 521, 527, 601, 651, 714, 807, 911],
         //   '运动手套（★） | 夜行衣': [],
         // M4A1 消音型
         'M4A1 消音型 | 伊卡洛斯殒落': [47, 56, 61, 72, 117, 143, 145, 152, 161, 170, 174, 193, 199, 201, 205, 211, 214, 218, 220, 228, 239, 248, 254, 257, 261, 276, 287, 289, 308, 309, 316, 322, 361, 363, 371, 384, 388, 395, 405, 413, 414, 416, 421, 433, 459, 465, 477, 482, 483, 496, 501, 514, 517, 536, 540, 551, 556, 560, 568, 569, 570, 572, 589, 590, 600, 604, 607, 608, 614, 616, 621, 636, 637, 638, 643, 649, 651, 656, 660, 665, 669, 680, 683, 695, 696, 697, 701, 707, 720, 726, 727, 743, 766, 794, 796, 801, 809, 823, 825, 826, 835, 842, 845, 856, 862, 875, 877, 879, 882, 885, 889, 905, 909, 910, 911, 914, 924, 925, 929, 931, 939, 950, 953, 964, 981, 985, 988, 989, 990],
-
+        '短剑（★） | 多普勒p4': [11, 29, 46, 84, 107, 136, 137, 141, 147, 150, 224, 236, 278, 308, 345, 375, 395, 396, 399, 401, 428, 455, 465, 486, 599, 639, 657, 690, 703, 712, 745, 747, 751, 754, 781, 789, 793, 800, 824, 825, 827, 838, 840, 849, 856, 872, 914, 936, 956, 968, 981],
+        '格洛克 18 型 | 伽玛多普勒绿宝石': [],
+        '折叠刀（★） | 多普勒p1': [7, 13, 39, 44, 59, 72, 119, 134, 153, 166, 190, 194, 209, 259, 265, 290, 360, 371, 374, 383, 408, 409, 410, 423, 432, 434, 469, 490, 526, 595, 600, 603, 638, 659, 684, 694, 715, 720, 816, 839, 857, 859, 861, 893, 896, 913, 919, 928, 951, 954, 969, 973],
+        '折叠刀（★） | 多普勒p2': [13, 20, 24, 49, 66, 88, 96, 113, 116, 134, 160, 174, 189, 193, 217, 218, 220, 226, 235, 237, 250, 284, 303, 325, 373, 394, 425, 450, 464, 477, 480, 492, 498, 504, 529, 531, 532, 552, 560, 610, 616, 627, 680, 689, 699, 711, 715, 716, 730, 739, 744, 750, 783, 820, 843, 852, 865, 871, 919, 926, 935, 973, 992, 998],
+        '折叠刀（★） | 多普勒p3': [21, 30, 43, 64, 73, 80, 103, 109, 130, 145, 155, 172, 173, 181, 211, 223, 229, 249, 260, 282, 283, 295, 313, 314, 358, 377, 381, 429, 435, 440, 447, 462, 466, 481, 482, 488, 508, 511, 514, 525, 536, 566, 568, 572, 597, 608, 640, 665, 677, 686, 726, 759, 813, 881, 891, 917, 940],
+        '折叠刀（★） | 多普勒p4': [11, 29, 46, 84, 107, 136, 137, 141, 147, 150, 201, 224, 236, 278, 308, 313, 345, 375, 395, 396, 399, 401, 428, 455, 465, 482, 486, 597, 599, 639, 657, 690, 703, 712, 745, 747, 751, 754, 781, 789, 793, 800, 824, 825, 827, 838, 840, 849, 856, 872, 914, 917, 936, 956, 968, 981],
+        '折叠刀（★） | 多普勒红宝石': [],
     };
     const templatesCollectionT3 = {
         // 多普勒系列--匕首
@@ -150,7 +170,7 @@
         'M9 刺刀（★） | 多普勒红宝石': [],
         'M9 刺刀（★） | 多普勒蓝宝石': [],
         // 伽玛多普勒系列--匕首
-        '爪子刀（★） | 伽玛多普勒p1': [250, 593, 334, 579, 477, 39, 151, 4, 102, 983, 733, 659, 7, 756, 706, 954, 411, 896, 394, 893, 818, 269, 777, 480, 412, 560, 464, 992, 646, 504, 551, 360, 492, 153, 443, 42, 767, 116, 383, 478, 843, 969, 189, 705, 699, 59, 859, 132, 280, 209, 750, 770, 166, 498, 178, 463, 143, 616, 693, 510, 234, 292, 580, 637, 185, 506, 174, 532, 502, 45, 290, 822, 374, 3, 973, 72, 660, 484, 472, 138, 855, 96, 684, 259, 534, 531, 626, 605, 0, 258, 929, 24, 1, 603, 744, 890, 529, 846, 958, 773, 725, 265, 146, 479, 231, 595, 839, 284, 522, 980, 951, 410, 490, 71, 44, 28, 715, 650, 720, 235, 279, 689, 408, 13, 216, 919, 883, 852, 134, 364, 309, 5, 820, 385, 816, 321, 349, 638, 791, 451, 337, 310, 307, 456, 335, 148, 371, 75, 355, 406, 434, 624, 372, 339, 112, 27, 237, 164, 352, 142, 415, 569, 315, 941, 515, 966, 248, 681, 642, 772, 674, 794, 709, 54, 83, 115, 197, 368, 263, 926, 473, 244, 351, 304, 62, 386, 986],
+        '爪子刀（★） | 伽玛多普勒p1': [857,423,194,913,600,928,469,694,680,776,303,507,286,598,436,716,373,162,489,193,58,250,593,334,477,39,151,4,102,983,733,659,7,756,706,954,411,896,394,893,818,777,646,504,360,492,153,443,42,767,383,189,699,59,859,280,209,750,770,166,498,463,616,693,510,234,292,637,185,506,174,532,502,45,290,822,374,3,973,72,660,484,472,138,855,96,684,259,531,626,605,258,24,1,603,744,890,529,846,958,773,725,265,146,479,231,595,839,284,522,980,951,410,490,71,44,28,715,650,720,235,279,689,408,13,216,919,883,852,134,364,309,5,820,385,816,321,349,638,791,451,337,310,307,456,335,148,164,142,415,569,315,674,794,624,569,315,966,642,674,709,54,368,351,304,62,761,353,413,170,496,663,438,400,691,948,535,333,485,266],
         '爪子刀（★） | 伽玛多普勒p2': [4, 36, 45, 55, 65, 86, 118, 134, 148, 185, 219, 225, 245, 264, 305, 306, 316, 330, 346, 367, 371, 379, 394, 415, 492, 503, 504, 512, 532, 549, 560, 562, 584, 617, 634, 641, 645, 654, 676, 713, 716, 738, 757, 760, 814, 843, 847, 903, 920, 945, 947, 970],
         '爪子刀（★） | 伽玛多普勒p3': [301, 903, 996, 294, 475, 427, 2, 470, 343, 61, 251, 414, 53, 272, 829, 947, 95, 904, 228, 357, 734, 695, 738, 735, 554, 967, 676, 140, 65, 617, 139, 67, 439, 50, 841, 300, 390, 10, 255, 175, 379, 729, 97, 641, 765, 823, 38, 797, 741, 837, 91, 964, 533, 629, 778, 567, 950, 207, 963, 19, 573, 978, 271, 556, 912],
         '爪子刀（★） | 伽玛多普勒p4': [9, 68, 121, 149, 156, 165, 171, 177, 183, 204, 206, 232, 238, 254, 329, 351, 372, 402, 441, 448, 499, 516, 537, 545, 546, 553, 559, 561, 590, 591, 637, 655, 656, 672, 710, 725, 727, 753, 756, 791, 809, 810, 817, 844, 941, 976, 977, 980, 988],
@@ -170,20 +190,32 @@
         '蝴蝶刀（★） | 渐变大理石': [1, 3, 7, 13, 20, 24, 31, 42, 44, 45, 49, 54, 59, 66, 72, 75, 77, 96, 98, 102, 106, 113, 119, 134, 142, 143, 151, 153, 162, 164, 174, 184, 185, 189, 190, 193, 194, 209, 217, 218, 220, 226, 231, 246, 250, 253, 258, 259, 262, 269, 280, 284, 286, 290, 296, 303, 310, 311, 325, 334, 335, 354, 369, 371, 373, 374, 385, 387, 388, 394, 411, 413, 415, 419, 423, 425, 432, 436, 438, 443, 450, 451, 464, 477, 479, 489, 492, 496, 498, 504, 507, 526, 529, 531, 532, 547, 551, 552, 560, 574, 579, 580, 600, 610, 627, 642, 670, 678, 680, 684, 689, 693, 699, 709, 715, 730, 733, 744, 767, 776, 794, 812, 816, 820, 839, 843, 845, 846, 852, 853, 857, 861, 865, 894, 896, 919, 929, 935, 951, 969, 973, 992],
         // 渐变之色系列--手套
         '专业手套（★） | 渐变之色': [35, 37, 39, 42, 69, 74, 100, 101, 115, 127, 128, 134, 136, 137, 146, 155, 170, 186, 189, 191, 219, 222, 235, 237, 244, 252, 253, 269, 271, 273, 275, 278, 285, 286, 290, 293, 309, 310, 313, 316, 319, 320, 337, 351, 358, 359, 362, 388, 391, 394, 413, 429, 430, 431, 438, 440, 458, 467, 468, 474, 479, 483, 512, 530, 542, 544, 556, 562, 563, 566, 569, 578, 581, 583, 590, 591, 592, 611, 615, 618, 627, 661, 689, 695, 698, 724, 727, 760, 767, 784, 793, 801, 808, 812, 816, 857, 874, 877, 888, 908, 917, 931, 989],
+        '专业手套（★） | 深红和服': [26, 37, 52, 81, 91, 92, 102, 129, 130, 147, 152, 155, 182, 183, 184, 209, 224, 232, 233, 285, 305, 317, 329, 357, 394, 447, 467, 497, 516, 576, 587, 591, 592, 655, 656, 679, 731, 875, 881, 891, 892, 916, 930, 931, 952, 953, 954, 957, 973],
         '运动手套（★） | 大型猎物': [18, 30, 34, 40, 59, 65, 69, 103, 93, 127, 139, 177, 197, 226, 230, 242, 254, 270, 355, 378, 382, 390, 459, 492, 507, 537, 541, 580, 609, 669, 738, 785, 798, 850, 872, 898, 902, 935],
         'M9 刺刀（★） | 渐变大理石': [34, 205, 256, 583, 648, 668, 742, 834, 892, 943, 944, 975],
         //   '运动手套（★） | 夜行衣': [],
         // M4A1 消音型
         'M4A1 消音型 | 伊卡洛斯殒落': [10, 15, 24, 33, 40, 45, 55, 65, 67, 79, 81, 82, 84, 87, 96, 104, 105, 114, 118, 119, 132, 135, 138, 149, 171, 212, 215, 223, 225, 243, 252, 255, 258, 260, 288, 298, 320, 321, 329, 333, 339, 342, 349, 367, 379, 392, 404, 406, 409, 422, 434, 445, 462, 464, 470, 472, 480, 489, 500, 510, 519, 523, 531, 533, 539, 552, 558, 559, 579, 585, 591, 593, 597, 599, 629, 634, 639, 677, 679, 687, 711, 719, 724, 730, 741, 752, 758, 771, 777, 781, 797, 804, 806, 810, 815, 824, 832, 839, 843, 850, 855, 859, 863, 874, 880, 883, 888, 899, 928, 930, 932, 956, 968, 971, 974, 977, 983, 984, 997, 998, 999],
+        '短剑（★） | 多普勒p4': [21, 30, 43, 64, 73, 80, 89, 103, 109, 130, 145, 155, 168, 172, 173, 181, 211, 223, 229, 249, 260, 282, 283, 295, 313, 314, 358, 377, 381, 429, 430, 435, 440, 447, 462, 466, 481, 482, 488, 508, 511, 514, 525, 536, 566, 568, 572, 597, 608, 640, 665, 677, 686, 726, 749, 759, 798, 813, 881, 891, 917, 940],
+        '格洛克 18 型 | 伽玛多普勒绿宝石': [],
+        '折叠刀（★） | 多普勒p1': [75, 77, 83, 115, 132, 221, 231, 237, 244, 248, 279, 306, 317, 349, 352, 355, 386, 398, 484, 502, 510, 519, 523, 544, 558, 634, 650, 675, 711, 721, 731, 739, 772, 784, 855, 862, 871, 883, 890, 926, 927, 983, 986],
+        '折叠刀（★） | 多普勒p2': [4, 31, 42, 44, 45, 54, 75, 83, 102, 115, 132, 142, 143, 162, 184, 185, 221, 231, 248, 253, 262, 269, 280, 296, 311, 317, 349, 352, 355, 371, 384, 386, 387, 398, 410, 434, 436, 451, 484, 490, 507, 510, 523, 540, 544, 547, 551, 558, 579, 598, 603, 611, 634, 642, 675, 678, 684, 693, 694, 721, 731, 733, 767, 772, 784, 853, 855, 883, 890, 928, 939, 986],
+        '折叠刀（★） | 多普勒p3': [11, 29, 46, 84, 89, 107, 136, 137, 141, 147, 150, 168, 224, 236, 278, 308, 345, 375, 395, 396, 399, 401, 428, 430, 455, 465, 486, 599, 639, 657, 690, 703, 712, 745, 747, 749, 751, 754, 781, 789, 793, 798, 800, 824, 825, 827, 838, 840, 849, 856, 872, 914, 936, 956, 968, 981],
+        '折叠刀（★） | 多普勒p4': [6, 12, 12, 21, 30, 33, 33, 43, 64, 73, 76, 76, 80, 89, 94, 103, 109, 130, 145, 155, 168, 172, 173, 181, 210, 211, 223, 229, 249, 260, 282, 283, 295, 302, 302, 314, 358, 377, 381, 429, 430, 435, 440, 440, 447, 458, 458, 462, 466, 481, 481, 488, 508, 511, 514, 525, 536, 564, 564, 566, 568, 572, 608, 640, 665, 677, 686, 726, 749, 759, 762, 790, 798, 813, 881, 887, 887, 891, 915, 915, 940, 960, 970],
+        '折叠刀（★） | 多普勒红宝石': [],
     };
     const templatesCollectionT4 = {
+        '专业手套（★） | 深红和服': [1, 2, 3, 32, 36, 45, 62, 67, 71, 78, 90, 101, 122, 123, 151, 161, 162, 185, 205, 228, 237, 257, 279, 288, 306, 307, 308, 333, 334, 335, 347, 410, 440, 441, 442, 461, 462, 463, 556, 575, 577, 590, 601, 602, 613, 647, 657, 658, 732, 742, 748, 789, 914, 915, 923, 924, 925, 955, 956, 979, 985, 996],
     };
-
+    const templatesCollectionT5 = {
+        '专业手套（★） | 深红和服': [24, 25, 47, 68, 72, 121, 164, 167, 168, 186, 187, 207, 212, 236, 250, 251, 260, 266, 269, 280, 289, 324, 325, 339, 348, 358, 365, 381, 397, 446, 466, 485, 527, 545, 553, 598, 646, 663, 680, 685, 686, 709, 715, 718, 726, 727, 728, 749, 754, 788, 797, 845, 848, 885, 893, 906, 926, 933, 937, 940, 945, 976, 977, 978, 995],
+    };
+  
     console.log('脚本已初始化');
-
+  
     // 拦截 XMLHttpRequest 请求
     const originalXhrOpen = XMLHttpRequest.prototype.open;
-
+  
     // 重写 XMLHttpRequest 的 open 方法
     XMLHttpRequest.prototype.open = function (method, url) {
         // queryOnSaleCommodityList 是uu获取在售列表的接口
@@ -195,10 +227,10 @@
                 if (this.readyState === 4 && this.status === 200) {
                     // 获取接口返回的数据
                     const res = JSON.parse(this.responseText);
-
+  
                     // 存储接口数据，假设接口返回的数据结构适合存储
                     if (res && res.Data) {
-
+  
                         res.Data.forEach(item => {
                             let obj = {
                                 wearValue: item.abrade.replace(/0+$/, '') || '', // 假设接口返回的数据有 wearValue 字段
@@ -208,7 +240,7 @@
                             }
                             dataList.push(obj)
                         });
-
+  
                         console.log("dataList =====> " + JSON.stringify(dataList));
                     }
                 }
@@ -218,11 +250,11 @@
                 }
             };
         }
-
+  
         // 调用原始的 open 方法
         originalXhrOpen.apply(this, arguments);
     };
-
+  
     // 按钮弹出窗口
     function showPopup(dataList, goodsName, type) {
         // 创建背景遮罩
@@ -236,9 +268,9 @@
         overlay.style.zIndex = '9998';
         overlay.style.transition = 'opacity 0.3s ease-in-out';
         overlay.style.opacity = 0;
-
+  
         setTimeout(() => overlay.style.opacity = 1, 10); // 为遮罩添加渐变出现效果
-
+  
         // 创建弹窗容器
         const popup = document.createElement('div');
         popup.style.position = 'fixed';
@@ -257,12 +289,12 @@
         popup.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
         popup.style.opacity = 0;
         popup.className = 'aaaaapopup'; // 添加类名aaaaapopup
-
+  
         setTimeout(() => {
             popup.style.opacity = 1;
             popup.style.transform = 'translate(-50%, -50%) scale(1)';
         }, 10); // 为弹窗添加渐变出现和缩放效果
-
+  
         // 创建内容容器并设置最大高度与隐藏滚动条
         const contentContainer = document.createElement('div');
         contentContainer.style.maxHeight = '600px';
@@ -270,11 +302,11 @@
         contentContainer.style.padding = '20px';
         contentContainer.style.fontSize = '16px';
         contentContainer.style.lineHeight = '1.2';
-
+  
         // 隐藏滚动条，但支持滚动
         contentContainer.style.scrollbarWidth = 'none'; // Firefox
         contentContainer.style.msOverflowStyle = 'none'; // IE 10+
-
+  
         // 使用 Webkit 方式隐藏滚动条
         contentContainer.style.webkitOverflowScrolling = 'touch'; // 平滑滚动效果
         const style = document.createElement('style');
@@ -290,10 +322,10 @@
   `;
         document.head.appendChild(style);
         contentContainer.classList.add('hide-scrollbar'); // 添加样式类以隐藏滚动条
-
+  
         // 弹窗内容
         let content = `<h3 style="text-align:center; color:#222; font-size: 24px; font-weight: 700; margin-bottom: 25px;">${type === '1' ? '磨损' : '模板'}价格查询</h3>`;
-
+  
         // 遍历数据列表并生成内容
         dataList.forEach((data, index) => {
             const isLastItem = index === dataList.length - 1;
@@ -313,10 +345,10 @@
   </div>
   `;
         });
-
+  
         // 将内容添加到内容容器中
         contentContainer.innerHTML = content;
-
+  
         // 创建关闭文本
         const closeText = document.createElement('span');
         closeText.innerText = '关闭';
@@ -328,15 +360,15 @@
         closeText.style.cursor = 'pointer';
         closeText.style.fontWeight = '400';
         closeText.style.transition = 'color 0.3s';
-
+  
         closeText.addEventListener('mouseenter', () => {
             closeText.style.color = '#666';
         });
-
+  
         closeText.addEventListener('mouseleave', () => {
             closeText.style.color = '#273249';
         });
-
+  
         closeText.addEventListener('click', () => {
             popup.style.opacity = 0;
             popup.style.transform = 'translate(-50%, -50%) scale(0.8)';
@@ -346,21 +378,21 @@
                 document.body.removeChild(overlay);
             }, 300);
         });
-
+  
         // 将关闭文本和内容容器添加到弹窗
         popup.appendChild(contentContainer);
         popup.appendChild(closeText);
-
+  
         // 添加到页面
         document.body.appendChild(overlay);
         document.body.appendChild(popup);
     }
-
+  
     // 发送查询请求的函数
     function sendRequest(wearValue, paintseed, template, type, targetName) {
         // 第一个接口的URL
         const firstApiUrl = 'https://sdt-api.ok-skins.com/user/skin/v2/skin-info?content=' + wearValue + '&timestamp=' + new Date().getTime();
-
+  
         // 请求第一个接口
         fetch(firstApiUrl, {
             method: 'GET',
@@ -378,17 +410,17 @@
         })
             .then(response => response.json()) // 解析第一个接口的响应
             .then(firstApiData => {
-
+  
                 // 遍历第一个接口返回的数组，寻找匹配的名称
                 const matchedItem = firstApiData?.data?.find(item => item.assetDetail?.classInfo?.name === targetName);
-
+  
                 if (matchedItem) {
                     const itemId = matchedItem.assetDetail.classInfo.itemId; // 获取 itemId
                     const goodsName = matchedItem.assetDetail.classInfo.name; // 获取 goodsName
-
+  
                     // 第二个接口的URL
                     const secondApiUrl = 'https://sdt-api.ok-skins.com/item/trade/v1/list?timestamp=' + new Date().getTime();
-
+  
                     const headers = {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
@@ -400,7 +432,7 @@
                         'Origin': 'https://steamdt.com',
                         'Referer': 'https://steamdt.com/',
                     };
-
+  
                     const requestData = {
                         paintSeed: paintseed ? [paintseed] : [], // 传入 paintseed 数据
                         specialStyles: template ? [template] : [], // 传入 template 数据
@@ -414,7 +446,7 @@
                         paintIndex: [], // 根据需求调整
                         timestamp: new Date().getTime().toString(), // 使用当前时间戳
                     };
-
+  
                     // 使用 fetch 发送 POST 请求
                     fetch(secondApiUrl, {
                         method: 'POST',
@@ -436,18 +468,18 @@
             })
             .catch(error => {
                 console.error('第一个接口请求失败:', error);
-
+  
             });
     }
-
+  
     document.addEventListener('DOMContentLoaded', function () {
-
+  
         const defaultPaintseedList = new Set([]);
-
+  
         const storedPaintseedList = localStorage.getItem('paintseedList');
         let paintseedList = storedPaintseedList ? new Set(JSON.parse(storedPaintseedList)) : new Set(defaultPaintseedList);
         let refreshIntervalId = null;
-
+  
         const panel = document.createElement('div');
         panel.style.position = 'fixed';
         panel.style.top = '20px';
@@ -482,12 +514,12 @@
             <button id="toggleRefresh" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">每5S刷新一次直到遇到自定义模板</button>
         `;
         document.body.appendChild(panel);
-
+  
         let isPanelHidden = true;
         panel.style.transform = 'translateX(calc(100% + 5px))';
         panel.style.transition = 'transform 0.3s ease';
         panel.style.backgroundColor = 'rgba(247, 151, 49, 0.9)';
-
+  
         panel.addEventListener('click', (e) => {
             // 只有当点击的是面板背景而不是内部元素时才触发
             if (e.target === panel) {
@@ -505,23 +537,30 @@
                 }
             }
         });
-
+  
         const paintseedDisplay = document.getElementById('paintseedList');
         const clearButton = document.getElementById('clearPaintseeds');
         const updateButton = document.getElementById('updatePaintseeds');
         const paintseedInput = document.getElementById('paintseedInput');
         const toggleRefreshButton = document.getElementById('toggleRefresh');
-
+  
         let highlightedPaintseeds = new Set(JSON.parse(localStorage.getItem('highlightedPaintseeds') || '[]'));
         updatePanel();
-
-        function processTRElements() {
+  
+                function processTRElements() {
             let found = false;
             if (urlFlag === 'yy') {
                 if (dataList.length <= 0) return found;
                 const rows = document.querySelectorAll('tr.ant-table-row');
 
                 rows.forEach((row) => {
+                    // 防止重复处理：检查是否已经添加过按钮
+                    if (row.querySelector('.view-history-btn') || row.querySelector('.cs-assistant-processed')) {
+                        return; // 跳过已处理的行
+                    }
+                    
+                    // 添加标记，表示这一行已经被处理过
+                    row.classList.add('cs-assistant-processed');
 
                     // 检查当前行是否包含磨损值
                     const wearValueDiv = row.querySelector('.wear-degree-num___AbgA1 span');
@@ -540,11 +579,11 @@
                         let paintseed = matchedData.paintseed || '';
                         let targetName = matchedData.targetName || '';
                         let topTemplate = '';
-
+  
                         template = targetName.includes('多普勒') ? template.toLowerCase() || '' : '';
                         topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
-
-
+  
+  
                         // 添加查看历史价格按钮
                         const historyButton = document.createElement('button');
                         historyButton.innerText = '查看历史价格';
@@ -560,7 +599,7 @@
                         historyButton.style.fontSize = '14px';
                         historyButton.style.transition = 'background-color 0.3s';
                         historyButton.style.width = '130px';
-
+  
                         // 悬浮效果
                         historyButton.addEventListener('mouseenter', () => {
                             historyButton.style.backgroundColor = '#D0801B';
@@ -568,16 +607,16 @@
                         historyButton.addEventListener('mouseleave', () => {
                             historyButton.style.backgroundColor = '#F7971D';
                         });
-
+  
                         // 添加查看历史价格按钮点击事件
                         historyButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-
+  
                             // 调用请求函数
                             sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
                         });
-
+  
                         // 添加按模板查询价格按钮
                         const templateButton = document.createElement('button');
                         templateButton.innerText = '按模板查询价格';
@@ -591,7 +630,7 @@
                         templateButton.style.fontSize = '14px';
                         templateButton.style.transition = 'background-color 0.3s';
                         templateButton.style.width = '130px';
-
+  
                         // 悬浮效果
                         templateButton.addEventListener('mouseenter', () => {
                             templateButton.style.backgroundColor = '#D0801B';
@@ -599,11 +638,11 @@
                         templateButton.addEventListener('mouseleave', () => {
                             templateButton.style.backgroundColor = '#F7971D';
                         });
-
+  
                         templateButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-
+  
                             // 调用请求函数
                             sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
                         });
@@ -644,10 +683,14 @@
                             templateLabel.style.backgroundColor = '#DBDBDB';
                             templateLabel.innerText = '榜单T4'; // 显示T4
                             templateLabel.style.padding = '6px';
+                        } else if (templatesCollectionT5[topTemplate] && templatesCollectionT5[topTemplate].includes(Number(paintseed))) {
+                            templateLabel.style.backgroundColor = '#DBDBDB';
+                            templateLabel.innerText = '榜单T5'; // 显示T5
+                            templateLabel.style.padding = '6px';
                         } else {
                             row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
                         }
-
+  
                         // 自定义模板
                         if (paintseed !== null && paintseedList.has(paintseed)) {
                             row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
@@ -659,7 +702,7 @@
                             highlightedPaintseeds.add(paintseed);
                             found = true;
                         }
-
+  
                         // 获取行内的一个 td 元素，假设是最后一个 td
                         const lastTd = row.querySelector('td:last-child');
                         if (lastTd) {
@@ -667,16 +710,16 @@
                             lastTd.appendChild(historyButton);
                             lastTd.appendChild(templateButton);
                         }
-
+  
                         dataList = dataList.filter(item => item.wearValue !== wearValue);
                     }
                 });
-
+  
             }
-
+  
             if (urlFlag === 'buff') {
                 const rows = document.querySelectorAll('tr');
-
+  
                 rows.forEach(row => {
                     // 检查当前行是否包含磨损值
                     const wearValueDiv = row.querySelector('.wear-value');
@@ -695,7 +738,7 @@
                         historyButton.style.borderRadius = '4px';
                         historyButton.style.fontSize = '14px';
                         historyButton.style.transition = 'background-color 0.3s';
-
+  
                         // 悬浮效果
                         historyButton.addEventListener('mouseenter', () => {
                             historyButton.style.backgroundColor = '#ECBB7E';
@@ -706,13 +749,13 @@
                         // 获取paintseed值
                         const assetInfo = JSON.parse(row.getAttribute('data-asset-info'));
                         const goodsInfo = JSON.parse(row.getAttribute('data-goods-info'));
-
+  
                         let paintseed = '';
                         let template = '';
                         let targetName = '';
                         let wearValue = null;
                         let topTemplate = '';
-
+  
                         // 获取磨损值
                         const wearText = wearValueDiv.textContent.trim();
                         const wearMatch = wearText.match(/磨损:\s*(\d+\.\d+)/);
@@ -726,18 +769,18 @@
                             paintseed = assetInfo?.info?.paintseed;
                             template = targetName.includes('多普勒') ? assetInfo?.info?.metaphysic?.data?.name?.toLowerCase() || '' : '';
                         }
-
+  
                         topTemplate = targetName.replace(/\s*\(.*?\)/g, '').trim() + template;
-
+  
                         // 添加查看历史价格按钮点击事件
                         historyButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-
+  
                             // 调用请求函数
                             sendRequest(wearValue, '', '', '1', targetName); // 传入磨损值和paintseed
                         });
-
+  
                         // 添加按模板查询价格按钮
                         const templateButton = document.createElement('button');
                         templateButton.innerText = '模板/历史价格';
@@ -752,7 +795,7 @@
                         templateButton.style.borderRadius = '4px';
                         templateButton.style.fontSize = '14px';
                         templateButton.style.transition = 'background-color 0.3s';
-
+  
                         // 悬浮效果
                         templateButton.addEventListener('mouseenter', () => {
                             templateButton.style.backgroundColor = '#ECBB7E';
@@ -760,11 +803,11 @@
                         templateButton.addEventListener('mouseleave', () => {
                             templateButton.style.backgroundColor = '#F7971D';
                         });
-
+  
                         templateButton.addEventListener('click', function () {
                             const existingPopups = document.querySelectorAll('.aaaaapopup');
                             existingPopups.forEach(popup => popup.remove());
-
+  
                             // 调用请求函数
                             sendRequest(wearValue, paintseed, template, '2', targetName); // 传入磨损值和paintseed
                         });
@@ -807,10 +850,14 @@
                             templateLabel.style.backgroundColor = '#DBDBDB';
                             templateLabel.innerText = '榜单T4'; // 显示T4
                             templateLabel.style.padding = '6px';
+                        } else if (templatesCollectionT5[topTemplate] && templatesCollectionT5[topTemplate].includes(Number(paintseed))) {
+                            templateLabel.style.backgroundColor = '#DBDBDB';
+                            templateLabel.innerText = '榜单T5'; // 显示T5
+                            templateLabel.style.padding = '6px';
                         } else {
                             row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
                         }
-
+  
                         // 自定义模板
                         if (paintseed !== null && paintseedList.has(paintseed)) {
                             row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
@@ -829,29 +876,29 @@
                     }
                 });
             }
-
+  
             updatePanel();
             if (found) {
                 // playAudioNotification();
             }
-
-
+  
+  
             return found;
         }
-
+  
         function updatePanel() {
             paintseedDisplay.textContent = Array.from(highlightedPaintseeds).join(', ');
             paintseedInput.value = Array.from(paintseedList).join(', ');
             localStorage.setItem('highlightedPaintseeds', JSON.stringify(Array.from(highlightedPaintseeds)));
         }
-
+  
         clearButton.addEventListener('click', () => {
             highlightedPaintseeds.clear();
             updatePanel();
         });
-
+  
         updateButton.addEventListener('click', () => {
-
+  
             const inputValues = paintseedInput.value
                 .replace(/，|、|\s+/g, ',')
                 .split(',')
@@ -865,8 +912,8 @@
             updatePanel();
             localStorage.setItem('paintseedList', JSON.stringify(Array.from(paintseedList)));
         });
-
-        toggleRefreshButton.addEventListener('click', () => {
+  
+                toggleRefreshButton.addEventListener('click', () => {
 
             if (refreshIntervalId) {
                 clearInterval(refreshIntervalId);
@@ -875,64 +922,98 @@
                 localStorage.setItem('refreshActive', 'false');
 
             } else {
+                let refreshCount = 0;
+                const maxRefreshes = 20; // 最多刷新20次，防止无限刷新
+                
                 refreshIntervalId = setInterval(() => {
+                    refreshCount++;
+                    
                     if (!processTRElements()) {
-
-                        location.reload();
+                        if (refreshCount >= maxRefreshes) {
+                            clearInterval(refreshIntervalId);
+                            refreshIntervalId = null;
+                            toggleRefreshButton.textContent = "刷新直到有漏";
+                            localStorage.setItem('refreshActive', 'false');
+                            alert('已达到最大刷新次数限制，请手动检查或调整自定义模板设置');
+                            return;
+                        }
+                        
+                        // 增加刷新间隔，减少服务器压力
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
                     } else {
                         clearInterval(refreshIntervalId);
                         refreshIntervalId = null;
                         toggleRefreshButton.textContent = "刷新直到有漏";
                         localStorage.setItem('refreshActive', 'false');
-
+                        // 找到目标后播放提示音
+                        playAudioNotification();
                     }
-                }, 5000);
+                }, 8000); // 增加到8秒间隔，减少频率
                 toggleRefreshButton.textContent = "停止刷新";
                 localStorage.setItem('refreshActive', 'true');
 
             }
 
         });
-
+  
         processTRElements();
-
-        const observer = new MutationObserver((mutations) => {
-
+  
+                const observer = new MutationObserver((mutations) => {
+            let shouldProcess = false;
+            
             mutations.forEach((mutation) => {
                 if (mutation.type === 'childList') {
-                    processTRElements();
+                    // 只有当添加的节点中包含新的表格行时才处理
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            if (node.matches && node.matches('tr.ant-table-row')) {
+                                shouldProcess = true;
+                            } else if (node.querySelector && node.querySelector('tr.ant-table-row')) {
+                                shouldProcess = true;
+                            }
+                        }
+                    });
                 }
             });
-
+            
+            if (shouldProcess) {
+                // 使用防抖，避免频繁调用
+                clearTimeout(window.processTRElementsTimeout);
+                window.processTRElementsTimeout = setTimeout(() => {
+                    processTRElements();
+                }, 100);
+            }
         });
 
         observer.observe(document.body, {
             childList: true,
             subtree: true
         });
-
-
-
+  
+  
+  
         if (localStorage.getItem('refreshActive') === 'true') {
             toggleRefreshButton.click();
         }
-
+  
         function playAudioNotification() {
-
+  
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
             const oscillator = audioContext.createOscillator();
             const gainNode = audioContext.createGain();
-
+  
             oscillator.type = 'sine';
             oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
             gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
-
+  
             oscillator.connect(gainNode);
             gainNode.connect(audioContext.destination);
-
+  
             oscillator.start();
             oscillator.stop(audioContext.currentTime + 1);
-
+  
         }
     });
-})();
+  })();
