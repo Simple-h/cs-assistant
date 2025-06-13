@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         cs助手
 // @namespace    https://github.com/your-github-username/cs-assistant
-// @version      3.0.0.4
+// @version      6.0.0.1
 // @description  CSGO2饰品捡漏大师脚本超实用！能依据排行榜查询多档次饰品数据，快速掌握历史价格。帮你精准定位性价比饰品，不错过任何捡漏时机，在 CSGO2 饰品交易里轻松抢占先机。
 // @author       Jack Mr
 // @match        *://*.youpin898.com/*
@@ -240,8 +240,6 @@
                             }
                             dataList.push(obj)
                         });
-  
-                        console.log("dataList =====> " + JSON.stringify(dataList));
                     }
                 }
                 // 调用原始的 onreadystatechange 回调
@@ -472,96 +470,14 @@
             });
     }
   
-    document.addEventListener('DOMContentLoaded', function () {
-  
-        const defaultPaintseedList = new Set([]);
-  
-        const storedPaintseedList = localStorage.getItem('paintseedList');
-        let paintseedList = storedPaintseedList ? new Set(JSON.parse(storedPaintseedList)) : new Set(defaultPaintseedList);
-        let refreshIntervalId = null;
-  
-        const panel = document.createElement('div');
-        panel.style.position = 'fixed';
-        panel.style.top = '20px';
-        panel.style.right = '20px';
-        panel.style.backgroundColor = 'rgba(38, 49, 71, 0.9)';
-        panel.style.backdropFilter = 'blur(5px)'; // 添加模糊效果
-        panel.style.borderRadius = '8px';
-        panel.style.color = '#fff';
-        panel.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-        panel.style.padding = '18px';
-        panel.style.zIndex = 10000;
-        panel.style.maxHeight = '400px';
-        panel.style.overflowY = 'auto';
-        panel.style.fontFamily = 'Arial, sans-serif';
-        panel.innerHTML = `
-            <a href="https://csgo2.wiki?from=jianloudashi-plugin" target="_blank">
-               <img style="width:50px" src="https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2fc8821e-eb40-4711-90a8-0e0d8e102d62%2Fd952780c-41d8-4840-b136-157392ce321b%2Fimage_5.png?table=collection&id=2e575e25-51de-4609-9f5e-7370aa9064b8&t=2e575e25-51de-4609-9f5e-7370aa9064b8&width=800&cache=v2" />
-            </a>
-            <a href="https://csgo2.wiki?from=jianloudashi-plugin" target="_blank" style="color:#fff"><strong>【特殊模板捡漏大师】自定义高亮面板</strong></a>
-            <br><br>
-            <strong>自定义模板历史记录:</strong>
-            <div id="paintseedList"></div>
-            <button id="clearPaintseeds" style="margin-top: 10px; background-color: #ff6b6b; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">清除历史记录</button>
-            <br><br>
-            <strong>自定义模板id:</strong>
-            <br>
-            <input type="text" id="paintseedInput" placeholder="输入 paintseed" style="width: 100%; margin-top: 10px; padding: 5px; border-radius: 5px; border: 1px solid #ccc; color: #000">
-            <button id="updatePaintseeds" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">更新目标模板</button>
-            <br><br>
-            <strong>自动操作:</strong>
-            <br>
-            <button id="toggleRefresh" style="margin-top: 10px; background-color: #F7971D; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">每5S刷新一次直到遇到自定义模板</button>
-        `;
-        document.body.appendChild(panel);
-  
-        let isPanelHidden = true;
-        panel.style.transform = 'translateX(calc(100% + 5px))';
-        panel.style.transition = 'transform 0.3s ease';
-        panel.style.backgroundColor = 'rgba(247, 151, 49, 0.9)';
-  
-        panel.addEventListener('click', (e) => {
-            // 只有当点击的是面板背景而不是内部元素时才触发
-            if (e.target === panel) {
-                if (!isPanelHidden) {
-                    // 移动到右边缘，只留下10px
-                    panel.style.transform = 'translateX(calc(100% + 5px))';
-                    panel.style.transition = 'transform 0.3s ease';
-                    panel.style.backgroundColor = 'rgba(247, 151, 49, 0.9)';
-                    isPanelHidden = true;
-                } else {
-                    // 恢复原位
-                    panel.style.transform = 'translateX(0)';
-                    panel.style.backgroundColor = 'rgba(38, 49, 71, 0.9)';
-                    isPanelHidden = false;
-                }
-            }
-        });
-  
-        const paintseedDisplay = document.getElementById('paintseedList');
-        const clearButton = document.getElementById('clearPaintseeds');
-        const updateButton = document.getElementById('updatePaintseeds');
-        const paintseedInput = document.getElementById('paintseedInput');
-        const toggleRefreshButton = document.getElementById('toggleRefresh');
-  
-        let highlightedPaintseeds = new Set(JSON.parse(localStorage.getItem('highlightedPaintseeds') || '[]'));
-        updatePanel();
-  
-                function processTRElements() {
-            let found = false;
-            if (urlFlag === 'yy') {
-                if (dataList.length <= 0) return found;
+    // 为每个 tr 元素添加查看历史价格和按模板查询价格按钮
+    function addHistoryButtonToRows() {
+        if (urlFlag === 'yy') {
+            if (dataList.length <= 0) return;
                 const rows = document.querySelectorAll('tr.ant-table-row');
-
+  
                 rows.forEach((row) => {
-                    // 防止重复处理：检查是否已经添加过按钮
-                    if (row.querySelector('.view-history-btn') || row.querySelector('.cs-assistant-processed')) {
-                        return; // 跳过已处理的行
-                    }
-                    
-                    // 添加标记，表示这一行已经被处理过
-                    row.classList.add('cs-assistant-processed');
-
+  
                     // 检查当前行是否包含磨损值
                     const wearValueDiv = row.querySelector('.wear-degree-num___AbgA1 span');
                     const wearText = wearValueDiv.textContent.trim();
@@ -570,7 +486,7 @@
                     if (wearMatch) {
                         wearValue = wearMatch[1];
                     }
-
+  
                     // dataList的磨损值匹配wearValue
                     const matchedData = dataList.find(item => item.wearValue === wearValue);
                     if (matchedData) {
@@ -658,10 +574,6 @@
                         templateLabel.style.textAlign = 'center';
                         templateLabel.style.borderRadius = '4px';
                         templateLabel.style.cursor = 'pointer';
-                        // templateLabel.addEventListener('click', function () {
-                        //     // 使用 window.open 打开链接，并指定 '_blank' 表示新标签页
-                        //     window.open('https://csgo2.wiki', '_blank');
-                        // });
                         // 根据模板和paintseed判断是否需要变更背景颜色
                         if (templatesCollectionT1[topTemplate] && templatesCollectionT1[topTemplate].includes(Number(paintseed))) {
                             row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
@@ -690,19 +602,6 @@
                         } else {
                             row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
                         }
-  
-                        // 自定义模板
-                        if (paintseed !== null && paintseedList.has(paintseed)) {
-                            row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
-                            templateLabel.style.backgroundColor = '#273249';
-                            templateLabel.style.color = '#fff';
-                            let infix = templateLabel.innerText ? "|" : "";
-                            templateLabel.innerText = "自定义模板🚩" + infix + templateLabel.innerText; // 自定义模板
-                            templateLabel.style.padding = '6px';
-                            highlightedPaintseeds.add(paintseed);
-                            found = true;
-                        }
-  
                         // 获取行内的一个 td 元素，假设是最后一个 td
                         const lastTd = row.querySelector('td:last-child');
                         if (lastTd) {
@@ -857,18 +756,6 @@
                         } else {
                             row.style.backgroundColor = ''; // 不满足条件则恢复默认背景
                         }
-  
-                        // 自定义模板
-                        if (paintseed !== null && paintseedList.has(paintseed)) {
-                            row.style.backgroundColor = '#E3BF90'; // 满足条件则背景变为黄色
-                            templateLabel.style.backgroundColor = '#273249';
-                            templateLabel.style.color = '#fff';
-                            let infix = templateLabel.innerText ? "|" : "";
-                            templateLabel.innerText = "自定义模板" + infix + templateLabel.innerText; // 自定义模板
-                            templateLabel.style.padding = '6px';
-                            highlightedPaintseeds.add(paintseed);
-                            found = true;
-                        }
                         // 将按钮添加到当前行
                         row.appendChild(templateLabel); // 添加显示T1/T2的div
                         row.appendChild(historyButton);
@@ -876,144 +763,9 @@
                     }
                 });
             }
-  
-            updatePanel();
-            if (found) {
-                // playAudioNotification();
-            }
-  
-  
-            return found;
         }
-  
-        function updatePanel() {
-            paintseedDisplay.textContent = Array.from(highlightedPaintseeds).join(', ');
-            paintseedInput.value = Array.from(paintseedList).join(', ');
-            localStorage.setItem('highlightedPaintseeds', JSON.stringify(Array.from(highlightedPaintseeds)));
-        }
-  
-        clearButton.addEventListener('click', () => {
-            highlightedPaintseeds.clear();
-            updatePanel();
-        });
-  
-        updateButton.addEventListener('click', () => {
-  
-            const inputValues = paintseedInput.value
-                .replace(/，|、|\s+/g, ',')
-                .split(',')
-                .map(item => item.trim())
-                .filter(item => item !== '')
-                .map(Number)
-                .filter(n => !isNaN(n));
-            paintseedList = new Set(inputValues);
-            highlightedPaintseeds.clear();
-            processTRElements();
-            updatePanel();
-            localStorage.setItem('paintseedList', JSON.stringify(Array.from(paintseedList)));
-        });
-  
-                toggleRefreshButton.addEventListener('click', () => {
-
-            if (refreshIntervalId) {
-                clearInterval(refreshIntervalId);
-                refreshIntervalId = null;
-                toggleRefreshButton.textContent = "刷新直到有漏";
-                localStorage.setItem('refreshActive', 'false');
-
-            } else {
-                let refreshCount = 0;
-                const maxRefreshes = 20; // 最多刷新20次，防止无限刷新
-                
-                refreshIntervalId = setInterval(() => {
-                    refreshCount++;
-                    
-                    if (!processTRElements()) {
-                        if (refreshCount >= maxRefreshes) {
-                            clearInterval(refreshIntervalId);
-                            refreshIntervalId = null;
-                            toggleRefreshButton.textContent = "刷新直到有漏";
-                            localStorage.setItem('refreshActive', 'false');
-                            alert('已达到最大刷新次数限制，请手动检查或调整自定义模板设置');
-                            return;
-                        }
-                        
-                        // 增加刷新间隔，减少服务器压力
-                        setTimeout(() => {
-                            location.reload();
-                        }, 1000);
-                    } else {
-                        clearInterval(refreshIntervalId);
-                        refreshIntervalId = null;
-                        toggleRefreshButton.textContent = "刷新直到有漏";
-                        localStorage.setItem('refreshActive', 'false');
-                        // 找到目标后播放提示音
-                        playAudioNotification();
-                    }
-                }, 8000); // 增加到8秒间隔，减少频率
-                toggleRefreshButton.textContent = "停止刷新";
-                localStorage.setItem('refreshActive', 'true');
-
-            }
-
-        });
-  
-        processTRElements();
-  
-                const observer = new MutationObserver((mutations) => {
-            let shouldProcess = false;
-            
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'childList') {
-                    // 只有当添加的节点中包含新的表格行时才处理
-                    mutation.addedNodes.forEach(node => {
-                        if (node.nodeType === Node.ELEMENT_NODE) {
-                            if (node.matches && node.matches('tr.ant-table-row')) {
-                                shouldProcess = true;
-                            } else if (node.querySelector && node.querySelector('tr.ant-table-row')) {
-                                shouldProcess = true;
-                            }
-                        }
-                    });
-                }
-            });
-            
-            if (shouldProcess) {
-                // 使用防抖，避免频繁调用
-                clearTimeout(window.processTRElementsTimeout);
-                window.processTRElementsTimeout = setTimeout(() => {
-                    processTRElements();
-                }, 100);
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-  
-  
-  
-        if (localStorage.getItem('refreshActive') === 'true') {
-            toggleRefreshButton.click();
-        }
-  
-        function playAudioNotification() {
-  
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-  
-            oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
-            gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
-  
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-  
-            oscillator.start();
-            oscillator.stop(audioContext.currentTime + 1);
-  
-        }
-    });
-  })();
+       
+        // 每隔1秒检查并为表格行添加按钮
+        setInterval(addHistoryButtonToRows, 500); // 这样即使定时器还在运行，也只会执行一次
+       
+      })();
